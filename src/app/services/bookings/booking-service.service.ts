@@ -9,7 +9,7 @@ export class BookingServiceService {
   constructor(private httpClient: HttpClient) { }
 
   addBooking() {
-
+    
   }
 
   editBooking() {
