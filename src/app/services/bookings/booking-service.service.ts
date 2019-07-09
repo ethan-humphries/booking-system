@@ -4,6 +4,9 @@ import { Booking } from 'src/app/models/bookings/booking';
 import { Observable } from 'rxjs';
 import { Bookings } from 'src/app/models/bookings/bookings';
 
+// this will be the url of our API
+const requestUrl = '';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -11,15 +14,13 @@ export class BookingServiceService {
 
   constructor(private httpClient: HttpClient) { }
 
-  addBooking(booking: Booking): number {
-    var bookingId: number;
-
+  addBooking(booking: Booking): Observable<number> {
+    var bookingId = this.httpClient.post<number>(requestUrl, booking);
     return bookingId;
   }
 
-  editBooking(booking: Booking): Booking {
-    
-    return;
+  editBooking(booking: Booking): Observable<Booking> {
+    return this.httpClient.post<Booking>(requestUrl, booking);
   }
 
   deleteBooking(bookingId: number): boolean {
