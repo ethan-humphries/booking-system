@@ -12,6 +12,12 @@ import { NewBookingModule } from './components/new-booking/new-booking.module';
 import { ReportsModule } from './components/reports/reports.module';
 import { SignUpModule } from './components/sign-up/sign-up.module';
 import { TopnavModule } from './components/topnav/topnav.module';
+import { ViewBookingsComponent } from './components/view-bookings/view-bookings.component';
+import { BookingComponent } from './components/booking/booking.component';
+import { ViewBookingsModule } from './components/view-bookings/view-bookings.module';
+import { BookingModule } from './components/booking/booking.module';
+import { DashboardOverviewComponent } from './components/dashboard-overview/dashboard-overview.component';
+import { DashboardOverviewModule } from './components/dashboard-overview/dashboard-overview.module';
 
 const myRoutes : Routes = [
   { path : 'dashboard-component', component : DashboardComponent},
@@ -19,7 +25,7 @@ const myRoutes : Routes = [
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,7 +38,10 @@ const myRoutes : Routes = [
     NewBookingModule,
     ReportsModule,
     SignUpModule,
-    TopnavModule
+    TopnavModule,
+    ViewBookingsModule,
+    BookingModule,
+    DashboardOverviewModule
   ],
   exports: [
     RouterModule
