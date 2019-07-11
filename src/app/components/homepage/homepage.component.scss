@@ -1,4 +1,14 @@
 .container {
   margin-top: 3%;
   margin-bottom: 3%;
+
+  /* center the element */
+  right: 0;
+  left: 0;
+  margin-right: auto;
+  margin-left: auto;
+
+  width: 50%;
+
+  border: 2px solid red;
 }
