@@ -25,4 +25,7 @@
 
 .width100 {
   width: 100%;
+  max-height: 600px;
+  min-height: 600px;
+  overflow: scroll;
 }

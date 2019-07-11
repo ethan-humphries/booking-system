@@ -3,6 +3,7 @@ import { Bookings } from 'src/app/models/bookings/bookings';
 import { Booking, BookingStatus } from 'src/app/models/bookings/booking';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import { FormControl } from '@angular/forms';
 
 const BOOKING_DATA: Booking[] = [
   {staffId: 123, bookingName: 'Ethan', customerName: 'Ethan', date: new Date() , duration: 1.5, numberOfPeople: 3, table: 1,
@@ -42,6 +43,8 @@ const BOOKING_DATA: Booking[] = [
 export class ViewBookingsComponent implements OnInit {
   displayedColumns: string[] = ['staffId', 'bookingName', 'customerName', 'date', 'duration', 'guests', 'table', 'status', 'checkedIn', 'notes'];
   dataSource = new MatTableDataSource(BOOKING_DATA);
+  date = new FormControl(new Date());
+  serializedDate = new FormControl((new Date()).toISOString());
 
   @ViewChild(MatSort, {static: true}) sort: MatSort;
 
