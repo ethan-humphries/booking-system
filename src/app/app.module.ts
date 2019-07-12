@@ -18,6 +18,8 @@ import { ViewBookingsModule } from './components/view-bookings/view-bookings.mod
 import { BookingModule } from './components/booking/booking.module';
 import { DashboardOverviewComponent } from './components/dashboard-overview/dashboard-overview.component';
 import { DashboardOverviewModule } from './components/dashboard-overview/dashboard-overview.module';
+import { HeaderComponent } from './components/header/header.component';
+
 
 const myRoutes : Routes = [
   { path : 'dashboard-component', component : DashboardComponent},
@@ -26,6 +28,7 @@ const myRoutes : Routes = [
 @NgModule({
   declarations: [
     AppComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
