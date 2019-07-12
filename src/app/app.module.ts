@@ -21,7 +21,6 @@ const myRoutes : Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
     HeaderComponent
   ],
   imports: [
