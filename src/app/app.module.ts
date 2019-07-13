@@ -13,7 +13,6 @@ import { ReportsModule } from './components/reports/reports.module';
 import { SignUpModule } from './components/sign-up/sign-up.module';
 import { TopnavModule } from './components/topnav/topnav.module';
 
-
 const myRoutes : Routes = [
   { path : 'dashboard-component', component : DashboardComponent},
 ];
@@ -33,7 +32,10 @@ const myRoutes : Routes = [
     NewBookingModule,
     ReportsModule,
     SignUpModule,
-    TopnavModule
+    TopnavModule,
+    ViewBookingsModule,
+    BookingModule,
+    DashboardOverviewModule
   ],
   exports: [
     RouterModule

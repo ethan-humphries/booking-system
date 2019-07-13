@@ -1,17 +1,17 @@
 import { NgModule } from '@angular/core';
-import { TopnavComponent } from './topnav.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BookingComponent } from './booking.component';
 
 @NgModule({
   declarations: [
-    TopnavComponent
+    BookingComponent
   ],
   imports: [
     BrowserAnimationsModule
   ],
   exports: [
-    TopnavComponent
+    BookingComponent
   ],
   providers: []
 })
-export class TopnavModule { }
+export class BookingModule { }

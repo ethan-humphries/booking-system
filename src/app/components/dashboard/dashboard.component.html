@@ -1,1 +1,29 @@
-<p>dashboard works!</p>
+<div class="container">
+    <div class="title">
+        <h3>My Dashboard</h3>
+    </div>
+    <mat-tab-group>
+        <mat-tab label="Home">
+            <div class="tab-content">
+                <app-dashboard-overview class="width100"></app-dashboard-overview>
+            </div>
+        </mat-tab>
+        <mat-tab label="Bookings">
+            <div class="tab-content">
+                <app-view-bookings class="width100"></app-view-bookings>
+            </div>
+        </mat-tab>
+        <mat-tab label="New Booking">
+            <div class="tab-content">
+                <app-new-booking class="width100"></app-new-booking>
+            </div>
+        </mat-tab>
+        <mat-tab label="Reports">
+            <div class="tab-content">
+                <app-reports class="width100"></app-reports>
+            </div>
+        </mat-tab>
+    </mat-tab-group>
+</div>
+
+

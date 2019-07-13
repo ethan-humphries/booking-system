@@ -1,0 +1,43 @@
+.container {
+  margin-top: 2%;
+  margin-bottom: 2%;
+  align-content: center;
+  text-align: center;
+  min-width: 80%;
+  max-height: 80%;
+}
+
+.tab-content {
+  height: 620px;
+  width: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 16px;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid grey;
+}
+
+mat-tab-group {
+  align-items: center;
+  justify-content: center;
+}
+
+.mat-tab-body-wrapper {
+  width: 100%;
+}
+
+
+.title {
+    align-content: center;
+    text-align: center;
+    margin: 2%;
+}
+
+.width100 {
+  width: 100%;
+  max-height: 600px;
+  min-height: 600px;
+  overflow: scroll;
+}

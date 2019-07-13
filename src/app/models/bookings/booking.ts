@@ -5,10 +5,9 @@ export class Booking {
     bookingName: string;
     customerName: string;
     date: Date;
-    time: Time;
-    duration: number;
+    duration: any;
     numberOfPeople: number;
-    table: number;
+    table: any;
     status: BookingStatus;
     checkedIn: boolean;
     notes: string;
