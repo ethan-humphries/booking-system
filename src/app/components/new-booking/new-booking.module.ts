@@ -3,6 +3,8 @@ import { NewBookingComponent } from './new-booking.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -11,7 +13,8 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
   imports: [
     MatCardModule,
     MatFormFieldModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    ReactiveFormsModule
   ],
   exports: [
     NewBookingComponent

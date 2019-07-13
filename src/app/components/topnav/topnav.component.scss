@@ -1,3 +1,4 @@
+
 @import "../../../styles.css";
 
 .topnav {
@@ -11,4 +12,17 @@
   text-align: center;
   border-bottom: 2px solid gray;
   margin-bottom: 2%;
+  
+header {
+  display: flex;
+  border-radius: 0px 0px 8px 8px;
+  text-align: center;
+  border: 2px solid red;
 }
+
+.header {
+  display: flex;
+  width: 50%;
+  border: 2px solid yellow;
+}
+
