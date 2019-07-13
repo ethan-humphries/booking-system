@@ -12,7 +12,7 @@ import { NewBookingModule } from './components/new-booking/new-booking.module';
 import { ReportsModule } from './components/reports/reports.module';
 import { SignUpModule } from './components/sign-up/sign-up.module';
 import { TopnavModule } from './components/topnav/topnav.module';
-import { HeaderComponent } from './components/header/header.component';
+
 
 const myRoutes : Routes = [
   { path : 'dashboard-component', component : DashboardComponent},
@@ -20,8 +20,7 @@ const myRoutes : Routes = [
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HeaderComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
