@@ -1,18 +1,14 @@
 @import "../../../styles.css";
 
 .topnav {
-  position: fixed;
   top: 0;
-
   /* center the element */
   right: 0;
   left: 0;
   margin-right: auto;
   margin-left: auto;
-
-  width: 50%;
-
-  text-align: left;
-  border-radius: 0px 0px 8px 8px;
-  border: 2px solid gray;
+  width: 100%;
+  text-align: center;
+  border-bottom: 2px solid gray;
+  margin-bottom: 2%;
 }
