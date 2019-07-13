@@ -10,8 +10,9 @@
   margin-left: auto;
   width: 100%;
   text-align: center;
-  border-bottom: 2px solid gray;
+  // border-bottom: 2px solid gray; // my changes conflicting with nathans
   margin-bottom: 2%;
+}
   
 header {
   display: flex;
@@ -22,7 +23,8 @@ header {
 
 .header {
   display: flex;
-  width: 50%;
+  width: 100%;
   border: 2px solid yellow;
+  text-align: center;
 }
 

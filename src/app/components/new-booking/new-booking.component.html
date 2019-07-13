@@ -1,24 +1,35 @@
 <div class="container">
+
     <mat-card class="newbooking">
+
         <mat-card-header>
             <mat-card-title>New Booking</mat-card-title>
             <mat-card-subtitle>Please enter details</mat-card-subtitle>
         </mat-card-header>
+
         <mat-card-content>
             <mat-form-field>
-                <input matInput [matDatepicker]="picker" placeholder="Choose a date">
-                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                <mat-datepicker #picker></mat-datepicker>
-            <mat-card-title>New Booking Test</mat-card-title>
-            <mat-card-subtitle>Please enter details</mat-card-subtitle>
-        </mat-card-header>
+                <!--all inputs require a formControl tag -  this two way data binds the form field to a variable in the typescript file-->
+                <input matInput [matDatepicker]="picker1" placeholder="choose" [formControl]="date">
+                <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                <mat-datepicker #picker1></mat-datepicker>
+            </mat-form-field>
+
+            <mat-form-field> <!--all oinputs in materials need to be wrapped as a matt form field-->
+                <input matInput [matDatepicker]="picker2" placeholder="choose" [formControl]="serializedDate">
+                <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                <mat-datepicker #picker2></mat-datepicker>
+            </mat-form-field>
+        </mat-card-content>
+
         <mat-card-content>
             <mat-form-field class="example-full-width">
-                <input matInput [matDatepicker]="picker" placeholder="Choose a date">
-                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <input matInput [matDatepicker]="picker3" placeholder="Choose a date" [formControl]="date2" >
+                <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
                 <mat-datepicker touchUi #picker></mat-datepicker>
-              </mat-form-field>
+            </mat-form-field>
         </mat-card-content>
-    </mat-card>
-</div>
 
+    </mat-card>
+
+</div>
