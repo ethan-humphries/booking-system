@@ -1,5 +1,9 @@
 import { NgModule } from '@angular/core';
 import { DashboardOverviewComponent } from './dashboard-overview.component';
+import { OverviewTileModule } from '../overview-tile/overview-tile.module';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatCardModule } from '@angular/material/card';
+
 
 
 @NgModule({
@@ -7,6 +11,9 @@ import { DashboardOverviewComponent } from './dashboard-overview.component';
     DashboardOverviewComponent
   ],
   imports: [
+    OverviewTileModule,
+    MatGridListModule,
+    MatCardModule
   ],
   exports: [
     DashboardOverviewComponent

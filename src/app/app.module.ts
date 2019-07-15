@@ -15,6 +15,8 @@ import { TopnavModule } from './components/topnav/topnav.module';
 import { ViewBookingsModule } from './components/view-bookings/view-bookings.module';
 import { BookingModule } from './components/booking/booking.module';
 import { DashboardOverviewModule } from './components/dashboard-overview/dashboard-overview.module';
+import { BookingService } from './services/bookings/booking-service.service';
+import { HttpClientModule } from '@angular/common/http';
 
 const myRoutes : Routes = [
   { path : 'dashboard-component', component : DashboardComponent},
@@ -43,7 +45,8 @@ const myRoutes : Routes = [
   exports: [
     RouterModule
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
