@@ -19,8 +19,8 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
     MatFormFieldModule,
     MatDatepickerModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule, //animations
-    MatInputModule, // this is required for all inputs
+    BrowserAnimationsModule, 
+    MatInputModule, 
     HttpClientModule
   ],
   exports: [
