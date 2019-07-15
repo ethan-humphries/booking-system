@@ -4,13 +4,21 @@ table {
 }
 
 .container {
-    width: 100%;
+  width: 100%;
 }
 
 mat-form-field {
-    margin-right: 12px;
+  margin-right: 12px;
 }
 
 .filter-options {
-    float: right;
+  float: right;
+}
+
+tr:hover {
+  background-color: rgb(0, 136, 206);
+  td,
+  th {
+    color: white;
+  }
 }
