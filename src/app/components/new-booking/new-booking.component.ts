@@ -13,7 +13,7 @@ export class NewBookingComponent implements OnInit {
   date2 = new FormControl(new Date());
   serializedDate = new FormControl((new Date()).toISOString());
   booking: Booking;
-
+  
   constructor(private bookingService: BookingService) { }
 
   ngOnInit() {
