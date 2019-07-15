@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard-overview.component.scss']
 })
 export class DashboardOverviewComponent implements OnInit {
-
+  title =  "Summary"
   constructor() { }
 
   ngOnInit() {

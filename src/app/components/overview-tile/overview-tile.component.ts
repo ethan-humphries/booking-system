@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-overview-tile',
@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./overview-tile.component.scss']
 })
 export class OverviewTileComponent implements OnInit {
-
+  @Input() title: string;
+  
   constructor() { }
 
   ngOnInit() {
