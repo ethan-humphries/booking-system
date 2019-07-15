@@ -4,6 +4,7 @@ import { Booking, BookingStatus } from 'src/app/models/bookings/booking';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { FormControl } from '@angular/forms';
+import { BookingService } from 'src/app/services/bookings/booking-service.service';
 
 const BOOKING_DATA: Booking[] = [
   {staffId: 123, bookingName: 'Ethan', customerName: 'Ethan', date: new Date() , duration: 1.5, numberOfPeople: 3, table: 1,
@@ -48,7 +49,7 @@ export class ViewBookingsComponent implements OnInit {
 
   @ViewChild(MatSort, {static: true}) sort: MatSort;
 
-  constructor() { }
+  constructor(private bookingService: BookingService) { }
 
   ngOnInit() {
     this.dataSource.sort = this.sort;

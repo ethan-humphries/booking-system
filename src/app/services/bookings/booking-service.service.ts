@@ -10,7 +10,7 @@ const requestUrl = '';
 @Injectable({
   providedIn: 'root'
 })
-export class BookingServiceService {
+export class BookingService {
 
   constructor(private httpClient: HttpClient) { }
 
@@ -24,7 +24,7 @@ export class BookingServiceService {
   }
 
   deleteBooking(bookingId: number): boolean {
-    
+
     return;
   }
 

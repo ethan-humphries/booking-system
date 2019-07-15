@@ -8,6 +8,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
+import { BookingService } from 'src/app/services/bookings/booking-service.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -23,11 +25,14 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatFormFieldModule,
     MatNativeDateModule,
     MatInputModule,
-    ReactiveFormsModule 
+    ReactiveFormsModule,
+    HttpClientModule 
   ],
   exports: [
     ViewBookingsComponent
   ],
-  providers: []
+  providers: [
+    BookingService
+  ]
 })
 export class ViewBookingsModule { }

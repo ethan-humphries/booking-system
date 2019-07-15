@@ -1,1 +1,16 @@
-<p>This will be a summary/overview for the logged in user as agreed on in the design</p>
+<p>Welcome to your HBS summary...</p>
+
+<mat-grid-list cols="2" rowHeight="2:1">
+    <mat-grid-tile>
+        <app-overview-tile [title]="'Daily'"></app-overview-tile>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <app-overview-tile [title]="'Weekly'"></app-overview-tile>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <app-overview-tile [title]="'Monthly'"></app-overview-tile>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <app-overview-tile [title]="'To Date'"></app-overview-tile>
+    </mat-grid-tile>
+  </mat-grid-list>
