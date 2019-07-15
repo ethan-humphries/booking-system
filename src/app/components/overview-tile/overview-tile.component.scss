@@ -1,4 +1,14 @@
 mat-card {
     height: 100%;
     width: 100%;
+    padding: 1px;
+}
+
+mat-card-title {
+    padding: 10px;
+}
+
+mat-card-subtitle {
+    padding: 1px;
+    font-size: 16px;
 }

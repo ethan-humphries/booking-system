@@ -1,8 +1,12 @@
 mat-grid-tile {
-    background: #ebebeb
+    background: #ebebeb;
+    max-height: 80%;
+    max-width: 80%;
 }
 
 app-overview-tile {
     height: 75%;
     width: 80%;
+    align-content: center;
+    align-items: center;
 }
