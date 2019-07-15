@@ -1,7 +1,7 @@
 <mat-card>
     <mat-card-title *ngIf="summary.summaryType">{{summary.summaryType | uppercase}} SUMMARY</mat-card-title>
-    <mat-card-subtitle *ngIf="summary.totalBookings">Total Bookings: {{summary.totalBookings}}</mat-card-subtitle>
-    <mat-card-subtitle *ngIf="summary.totalGuests">Total Guests: {{summary.totalGuests}}</mat-card-subtitle>
-    <mat-card-subtitle *ngIf="summary.totalNoShows"> Total No Shows:{{summary.totalNoShows}}</mat-card-subtitle>
+    <mat-card-subtitle *ngIf="summary.totalBookings"><strong>Total Bookings:</strong> &nbsp;&nbsp;{{summary.totalBookings}}</mat-card-subtitle>
+    <mat-card-subtitle *ngIf="summary.totalGuests"><strong>Total Guests:</strong> &nbsp;&nbsp;{{summary.totalGuests}}</mat-card-subtitle>
+    <mat-card-subtitle *ngIf="summary.totalNoShows"><strong>Total No Shows:</strong> &nbsp;&nbsp;{{summary.totalNoShows}}</mat-card-subtitle>
     <mat-card-content></mat-card-content>
 </mat-card>
