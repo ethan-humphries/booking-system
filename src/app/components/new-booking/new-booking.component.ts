@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewBookingComponent implements OnInit {
 
+
   constructor() { }
 
   ngOnInit() {

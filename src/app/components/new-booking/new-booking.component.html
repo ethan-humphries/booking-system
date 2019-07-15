@@ -1,11 +1,18 @@
 <div class="container">
+<<<<<<< Updated upstream
     <mat-card class="newbooking">
+=======
+
+    <mat-card class="booking-detail">
+
+>>>>>>> Stashed changes
         <mat-card-header>
-            <mat-card-title>New Booking</mat-card-title>
-            <mat-card-subtitle>Please enter details</mat-card-subtitle>
+            <mat-card-title>Booking Details</mat-card-title>
         </mat-card-header>
         <mat-card-content>
+        <!--all inputs require a formControl tag -  this two way data binds the form field to a variable in the typescript file-->
             <mat-form-field>
+<<<<<<< Updated upstream
                 <input matInput [matDatepicker]="picker" placeholder="Choose a date">
                 <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                 <mat-datepicker #picker></mat-datepicker>
@@ -19,6 +26,54 @@
                 <mat-datepicker touchUi #picker></mat-datepicker>
               </mat-form-field>
         </mat-card-content>
+=======
+                <input matInput [matDatepicker]="picker1" placeholder="Date of Booking" [formControl]="date">
+                <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                <mat-datepicker touchUi #picker1></mat-datepicker>
+              </mat-form-field>
+         </mat-card-content>
+         <mat-form-field>
+             <input matInput placeholder="Number of Guests"><!--need to create new variabel to store this?-->
+         </mat-form-field>
+         <p>For bookings of 14+ guests, a sharing menu is suggested. Please contact the club on 02 9428 5155 to discuss</p>
+         <mat-form-field>
+             <input matInput placeholder="Time of Booking"><!--need to create new variabel to store this?-->
+         </mat-form-field>
+         <mat-form-field>
+             <input matInput placeholder="Table Number"><!--need to create new variabel to store this?-->
+         </mat-form-field>
+         <!--all oinputs in materials need to be wrapped as a matt form field-->
+
+        <mat-card class="personal-detail">
+            <mat-card-header>
+                <mat-card-title>Personal Details</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <mat-form-field>
+                    <input matInput placeholder="First Name"><!--need to create new variabel to store this?-->
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Last Name"><!--need to create new variabel to store this?-->
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Phone Number"><!--need to create new variabel to store this?-->
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Email Address"><!--need to create new variabel to store this?-->
+                </mat-form-field>
+            </mat-card-content>
+        </mat-card>
+
+        <mat-card class="additional-information">
+            <mat-card-header>
+                <mat-card-title>Additional Information</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                
+            </mat-card-content>
+        </mat-card>
+
+>>>>>>> Stashed changes
     </mat-card>
 </div>
 
