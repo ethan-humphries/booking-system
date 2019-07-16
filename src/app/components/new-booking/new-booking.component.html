@@ -1,11 +1,5 @@
-<html>
-
-<head></head>
-
-<body>&lt;<div class="container">
-
+<div class="container">
         <mat-card class="booking-detail">
-
             <mat-card-header>
                 <mat-card-title>Booking Details</mat-card-title>
             </mat-card-header>
@@ -16,59 +10,48 @@
                     <mat-datepicker-toggle matsuffix="" [for]="picker1"></mat-datepicker-toggle>
                     <mat-datepicker touchui="" #picker1=""></mat-datepicker>
                 </mat-form-field>
-            </mat-card-content>
-            <mat-form-field>
-                <input matinput="" placeholder="Number of Guests">
-                <!--need to create new variabel to store this?-->
-            </mat-form-field>
-            <p>For bookings of 14+ guests, a sharing menu is suggested. Please contact the club on 02 9428 5155 to
-                discuss</p>
-            <mat-form-field>
-                <input matinput="" placeholder="Time of Booking">
-                <!--need to create new variabel to store this?-->
-            </mat-form-field>
-            <mat-form-field>
-                <input matinput="" placeholder="Table Number">
-                <!--need to create new variabel to store this?-->
-            </mat-form-field>
+           
+                 <mat-form-field>
+                    <input matinput="" placeholder="Number of Guests" [formControl]="noOfGuests">
+                </mat-form-field>
+                <p>For bookings of 14+ guests, a sharing menu is suggested. Please contact the club on 02 9428 5155 to
+                    discuss</p>
+                <mat-form-field>
+                    <input matinput="" placeholder="Time of Booking" [formControl]="time">    
+                </mat-form-field>
+                <mat-form-field>
+                    <input matinput="" placeholder="Table Number" [formControl]="tableNumber">
+                </mat-form-field>
             <!--all oinputs in materials need to be wrapped as a matt form field-->
-
-            <mat-card class="personal-detail">
-                <mat-card-header>
-                    <mat-card-title>Personal Details</mat-card-title>
-                </mat-card-header>
-                <mat-card-content>
-                    <mat-form-field>
-                        <input matinput="" placeholder="First Name">
-                        <!--need to create new variabel to store this?-->
-                    </mat-form-field>
-                    <mat-form-field>
-                        <input matinput="" placeholder="Last Name">
-                        <!--need to create new variabel to store this?-->
-                    </mat-form-field>
-                    <mat-form-field>
-                        <input matinput="" placeholder="Phone Number">
-                        <!--need to create new variabel to store this?-->
-                    </mat-form-field>
-                    <mat-form-field>
-                        <input matinput="" placeholder="Email Address">
-                        <!--need to create new variabel to store this?-->
-                    </mat-form-field>
-                </mat-card-content>
-            </mat-card>
-
-            <mat-card class="additional-information">
-                <mat-card-header>
-                    <mat-card-title>Additional Information</mat-card-title>
-                </mat-card-header>
-                <mat-card-content>
-
-                </mat-card-content>
-            </mat-card>
-
+            </mat-card-content>    
+        </mat-card>
+        
+        <mat-card class="personal-detail">
+            <mat-card-header>
+                <mat-card-title>Personal Details</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <mat-form-field>
+                    <input matinput="" placeholder="First Name" [formControl]="firstName">
+                </mat-form-field>
+                <mat-form-field>
+                    <input matinput="" placeholder="Last Name" [formControl]="lastName">
+                </mat-form-field>
+                <mat-form-field>
+                    <input matinput="" placeholder="Phone Number" [formControl="phoneNumber"]>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matinput="" placeholder="Email Address" [formControl="email"]>
+                </mat-form-field>
+            </mat-card-content>
         </mat-card>
 
-    </div>
-</body>
+        <mat-card class="additional-information">
+            <mat-card-header>
+                <mat-card-title>Additional Information</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
 
-</html>
+            </mat-card-content>
+        </mat-card>
+    </div>
