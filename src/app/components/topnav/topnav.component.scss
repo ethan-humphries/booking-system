@@ -17,7 +17,7 @@ header {
 
 .header {
   display: flex;
-  width:50%;
+  width: 50%;
   border: 2px solid yellow;
   text-align: center;
 }
@@ -29,64 +29,44 @@ header {
   left: 0;
   right: 0;
   border: 2px solid red;
+  margin: 10px;
+  float:left;
 }
 
 .brand-name {
-
-text-align: center;
+  float: Left;
+  text-align: center;
 }
 
 
 .topnav {
+  margin: 10px;
   right: 0;
   margin-left: auto;
-  width: 50%;
-  text-align: right;
+  text-align: center;
   border: 2px solid blue;
 }
 
-.logout-group {
-  display: flex;
-  right: 0;
-  top: 16px;
-  height: 45px;
-  width: 39px;
-  position: absolute;
+.icon-group {
+  float: left;
+  height: 60px;
+  width: 60px;
+  border: 2px solid red;
+  margin: 10px;
 }
 
-.logout-icon {
-  left: 6px;
-  top: 0px;
-  width: 32px;
-  height: 32px;
-  position: absolute;
+.icon-icon {
+  margin-right: auto;
+  margin-left: auto;
+  width: 42px;
+  height: 42px;
 }
 
 .icon-text {
-  left: -4px;
-  top: 30px;
-  position: absolute;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+  border:2px solid purple;
 }
 
-.setting-group {
-  display: flex;
-  right: 0;
-  top: 16px;
-  height: 45px;
-  width: 48px;
-  position: absolute;
-}
 
-.setting-icon {
-  left: 9px;
-  top: 0px;
-  width: 32px;
-  height: 32px;
-  position: absolute;
-}
-
-.setting-text {
-  left: 0px;
-  top: 29px;
-  position: absolute;
-}
