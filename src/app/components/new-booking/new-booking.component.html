@@ -29,40 +29,47 @@
                     <input matInput placeholder="Table Number" [formControl]="tableNumber">
                 </mat-form-field>
          </mat-expansion-panel>
+         
+         <mat-expansion-panel (opened)="panelOpenState = true"
+                             (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Personal Details
+                </mat-panel-title>
+                <mat-panel-description>
+                    Please enter personal details
+                </mat-panel-description>
+            </mat-expansion-panel-header>
             
+            <mat-form-field>
+                <input matInput placeholder="First Name" [formControl]="firstName">
+             </mat-form-field>
+             <mat-form-field>
+                <input matInput placeholder="Last Name" [formControl]="lastName">
+             </mat-form-field>
+             <mat-form-field>
+                <input matInput placeholder="Phone Number" [formControl]="phoneNumber">
+            </mat-form-field>
+             <mat-form-field>
+                <input matInput placeholder="Email Address" [formControl]="email">
+             </mat-form-field>
+         </mat-expansion-panel>
+   
+         <mat-expansion-panel (opened)="panelOpenState = true"
+                              (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Additional Information
+                </mat-panel-title>
+                <mat-panel-description>
+                    Please enter any additional information required
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+
+
+         </mat-expansion-panel>
+         
     </mat-accordion>
             <!--all inputs require a formControl tag -  this two way data binds the form field to a variable in the typescript file-->
                 
             <!--all oinputs in materials need to be wrapped as a matt form field-->
-<!--
-        
-        <mat-card class="personal-detail">
-            <mat-card-header>
-                <mat-card-title>Personal Details</mat-card-title>
-            </mat-card-header>
-            <mat-card-content>
-                <mat-form-field>
-                    <input matinput placeholder="First Name" [formControl]="firstName">
-                </mat-form-field>
-                <mat-form-field>
-                    <input matinput placeholder="Last Name" [formControl]="lastName">
-                </mat-form-field>
-                <mat-form-field>
-                    <input matinput placeholder="Phone Number" [formControl]="phoneNumber">
-                </mat-form-field>
-                <mat-form-field>
-                    <input matinput placeholder="Email Address" [formControl]="email">
-                </mat-form-field>
-            </mat-card-content>
-        </mat-card>
-
-        <mat-card class="additional-information">
-            <mat-card-header>
-                <mat-card-title>Additional Information</mat-card-title>
-            </mat-card-header>
-            <mat-card-content>
-                <p>content goes here</p>
-            </mat-card-content>
-        </mat-card> 
-    -->
-
