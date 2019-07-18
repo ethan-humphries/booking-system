@@ -1,5 +1,5 @@
 
-    <mat-accordion>
+    <mat-accordion class="newBooking">
         <mat-expansion-panel (opened)="panelOpenState = true"
                              (closed)="panelOpenState = false">
             <mat-expansion-panel-header>
@@ -20,7 +20,7 @@
                 <mat-form-field>
                     <input matInput placeholder="Number of Guests" [formControl]="noOfGuests">
                 </mat-form-field>
-                <p>For bookings of 14+ guests, a sharing menu is suggested. Please contact the club on 02 9428 5155 to
+                <p class="largeBookingMsg">For bookings of 14+ guests, a sharing menu is suggested. Please contact the club on 02 9428 5155 to
                     discuss</p>
                 <mat-form-field>
                     <input matInput placeholder="Time of Booking" [formControl]="time">    
@@ -70,6 +70,10 @@
          </mat-expansion-panel>
          
     </mat-accordion>
+    <div class="buttons">
+        <button mat-raised-button>CONFIRM BOOKING</button>
+        <button mat-raised-button>CLEAR FORM</button>
+    </div>
             <!--all inputs require a formControl tag -  this two way data binds the form field to a variable in the typescript file-->
                 
             <!--all oinputs in materials need to be wrapped as a matt form field-->
