@@ -5,7 +5,7 @@ import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { MatExpansionModule } from '@angular/material/expansion';
 import { BookingService } from 'src/app/services/bookings/booking-service.service';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { MatInputModule } from '@angular/material/input';
@@ -18,6 +18,7 @@ import { MatInputModule } from '@angular/material/input';
   imports: [
     MatCardModule,
     MatFormFieldModule,
+    MatExpansionModule,
     MatDatepickerModule,
     ReactiveFormsModule,
     BrowserAnimationsModule, //animations
