@@ -21,6 +21,8 @@ export class NewBookingComponent implements OnInit {
   lastName = new FormControl(null);
   phoneNumber = new FormControl(null);
   email = new FormControl(null);
+  dietOther = new FormControl(null);
+  notes = new FormControl(null);
 
 
   
