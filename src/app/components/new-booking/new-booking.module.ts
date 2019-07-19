@@ -10,6 +10,7 @@ import { BookingService } from 'src/app/services/bookings/booking-service.servic
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 
 
@@ -26,7 +27,8 @@ import { MatButtonModule } from '@angular/material/button';
     BrowserAnimationsModule, //animations
     MatInputModule, // this is required for all inputs
     HttpClientModule,
-    MatButtonModule
+    MatButtonModule,
+    MatCheckboxModule
   ],
   exports: [
     NewBookingComponent
