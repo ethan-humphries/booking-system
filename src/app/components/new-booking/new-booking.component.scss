@@ -12,3 +12,31 @@
     display: flex;
     flex-direction: column;
 }
+
+mat-form-field {
+    width: 80%;
+}
+
+.largeBookingMsg {
+    text-align: left;
+    padding-left: 135px;
+}
+
+.buttons {
+    width: 80%;
+    padding-top: 50px;
+    align-content: left;
+}
+
+.confirmButton {
+    padding-right: 20px;
+}
+
+.clearButton {
+    padding-left: 20px;
+}
+
+.additionalInfo {
+    width: 80%;
+    padding: 50px;
+}

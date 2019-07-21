@@ -1,57 +1,117 @@
-<div class="container">
-        <mat-card class="booking-detail">
-            <mat-card-header>
-                <mat-card-title>Booking Details</mat-card-title>
-            </mat-card-header>
-            <mat-card-content>
-                <!--all inputs require a formControl tag -  this two way data binds the form field to a variable in the typescript file-->
-                <mat-form-field>
+
+    <mat-accordion class="newBooking">
+        <mat-expansion-panel (opened)="panelOpenState = true"
+                             (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Booking Details
+                </mat-panel-title>
+                <mat-panel-description>
+                    Please enter booking details
+                </mat-panel-description>
+             </mat-expansion-panel-header>
+                
+            <mat-form-field>
                     <input matInput [matDatepicker]="picker" placeholder="Date of Booking" [formControl]="date">
                     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                     <mat-datepicker touchUi #picker></mat-datepicker>
                 </mat-form-field>
-           
-                 <mat-form-field>
-                    <input matinput placeholder="Number of Guests" [formControl]="noOfGuests">
+               
+                <mat-form-field>
+                    <input matInput placeholder="Number of Guests" [formControl]="noOfGuests">
                 </mat-form-field>
-                <p>For bookings of 14+ guests, a sharing menu is suggested. Please contact the club on 02 9428 5155 to
+                <p class="largeBookingMsg">For bookings of 14+ guests, a sharing menu is suggested. Please contact the club on 02 9428 5155 to
                     discuss</p>
                 <mat-form-field>
-                    <input matinput placeholder="Time of Booking" [formControl]="time">    
+                    <input matInput placeholder="Time of Booking" [formControl]="time">    
                 </mat-form-field>
                 <mat-form-field>
-                    <input matinput placeholder="Table Number" [formControl]="tableNumber">
+                    <input matInput placeholder="Table Number" [formControl]="tableNumber">
                 </mat-form-field>
-            <!--all oinputs in materials need to be wrapped as a matt form field-->
-            </mat-card-content>    
-        </mat-card>
-        
-        <mat-card class="personal-detail">
-            <mat-card-header>
-                <mat-card-title>Personal Details</mat-card-title>
-            </mat-card-header>
-            <mat-card-content>
+         </mat-expansion-panel>
+         
+         <mat-expansion-panel (opened)="panelOpenState = true"
+                             (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Personal Details
+                </mat-panel-title>
+                <mat-panel-description>
+                    Please enter personal details
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            
+            <mat-form-field>
+                <input matInput placeholder="First Name" [formControl]="firstName">
+             </mat-form-field>
+             <mat-form-field>
+                <input matInput placeholder="Last Name" [formControl]="lastName">
+             </mat-form-field>
+             <mat-form-field>
+                <input matInput placeholder="Phone Number" [formControl]="phoneNumber">
+            </mat-form-field>
+             <mat-form-field>
+                <input matInput placeholder="Email Address" [formControl]="email">
+             </mat-form-field>
+         </mat-expansion-panel>
+   
+         <mat-expansion-panel (opened)="panelOpenState = true"
+                              (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Additional Information
+                </mat-panel-title>
+                <mat-panel-description>
+                    Please enter any additional information required
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title>Dietary Requirements</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <mat-checkbox>Vegetarian</mat-checkbox>
+                    <mat-checkbox>Gluten Free</mat-checkbox>
+                    <mat-checkbox>Dairy Free</mat-checkbox>
+                    <mat-checkbox>Other</mat-checkbox>
+                    <mat-form-field>
+                        <input matInput placeholder="Please enter details" [formControl]="dietOther">
+                    </mat-form-field>
+                </mat-card-content>
+            </mat-card>
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title>Special Seating</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <p>Will you require a highchair?</p>
+                    <mat-checkbox>Yes</mat-checkbox>
+                    <mat-checkbox>No</mat-checkbox>
+                    <p>Will you require wheelchair accessible seating?</p>
+                    <mat-checkbox>Yes</mat-checkbox>
+                    <mat-checkbox>No</mat-checkbox>
+                </mat-card-content>
+            </mat-card>
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title>Other Info</mat-card-title>
+                </mat-card-header>
                 <mat-form-field>
-                    <input matinput placeholder="First Name" [formControl]="firstName">
-                </mat-form-field>
-                <mat-form-field>
-                    <input matinput placeholder="Last Name" [formControl]="lastName">
-                </mat-form-field>
-                <mat-form-field>
-                    <input matinput placeholder="Phone Number" [formControl]="phoneNumber">
-                </mat-form-field>
-                <mat-form-field>
-                    <input matinput placeholder="Email Address" [formControl]="email">
-                </mat-form-field>
-            </mat-card-content>
-        </mat-card>
+                        <input matInput placeholder="Notes" [formControl]="notes">
+                     </mat-form-field>
+            </mat-card>
+            <!--Not sure how to save the result and then display it elsewhere-->
+            
 
-        <mat-card class="additional-information">
-            <mat-card-header>
-                <mat-card-title>Additional Information</mat-card-title>
-            </mat-card-header>
-            <mat-card-content>
-                <p>content goes here</p>
-            </mat-card-content>
-        </mat-card>
+
+         </mat-expansion-panel>
+         
+    </mat-accordion>
+    <div class="buttons">
+        <button class="confirmButton" mat-raised-button>CONFIRM BOOKING</button>
+        <button class="clearButton" mat-raised-button>CLEAR FORM</button>
     </div>
+            <!--all inputs require a formControl tag -  this two way data binds the form field to a variable in the typescript file-->
+                
+            <!--all oinputs in materials need to be wrapped as a matt form field-->
