@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 import { BookingService } from 'src/app/services/bookings/booking-service.service';
 import { Booking } from 'src/app/models/bookings/booking';
 import { format } from 'url';
@@ -23,6 +23,7 @@ export class NewBookingComponent implements OnInit {
   email = new FormControl(null);
   dietOther = new FormControl(null);
   notes = new FormControl(null);
+  form: FormGroup
 
 
   

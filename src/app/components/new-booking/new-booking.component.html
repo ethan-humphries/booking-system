@@ -1,4 +1,4 @@
-
+<form [formGroup]="newbookingform">
     <mat-accordion class="newBooking">
         <mat-expansion-panel (opened)="panelOpenState = true"
                              (closed)="panelOpenState = false">
@@ -42,10 +42,10 @@
             </mat-expansion-panel-header>
             
             <mat-form-field>
-                <input matInput placeholder="First Name" [formControl]="firstName">
+                <input type="text" matInput placeholder="First Name" [formControl]="firstName">
              </mat-form-field>
              <mat-form-field>
-                <input matInput placeholder="Last Name" [formControl]="lastName">
+                <input type="text" matInput placeholder="Last Name" [formControl]="lastName">
              </mat-form-field>
              <mat-form-field>
                 <input matInput placeholder="Phone Number" [formControl]="phoneNumber">
@@ -109,9 +109,10 @@
          
     </mat-accordion>
     <div class="buttons">
-        <button class="confirmButton" mat-raised-button>CONFIRM BOOKING</button>
-        <button class="clearButton" mat-raised-button>CLEAR FORM</button>
+        <button class="confirmButton" type="submit">CONFIRM BOOKING</button>
+        <button class="clearButton" type="reset">CLEAR FORM</button>
     </div>
             <!--all inputs require a formControl tag -  this two way data binds the form field to a variable in the typescript file-->
                 
             <!--all oinputs in materials need to be wrapped as a matt form field-->
+</form>
