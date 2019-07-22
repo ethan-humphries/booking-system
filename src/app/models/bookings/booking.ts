@@ -3,14 +3,18 @@ import { Time } from '@angular/common';
 export class Booking {
     staffId: number;
     bookingName: string;
-    customerName: string;
-    date: Date;
+    customerName?: string;
+    date?: any;
+    time?: any;
     duration: any;
     numberOfPeople: number;
-    table: any;
-    status: BookingStatus;
-    checkedIn: boolean;
-    notes: string;
+    table?: any;
+    status?: BookingStatus;
+    checkedIn?: boolean;
+    notes?: string;
+    highchairRequired?: boolean;
+    wheelchair?: boolean;
+    dietryRequirements?: any;
 }
 
 export enum BookingStatus {
