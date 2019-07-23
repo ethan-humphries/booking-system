@@ -1,14 +1,13 @@
 # HBS
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.4.
+This is version 1.0.0 of the HBS project. This is the curent front end only prototype of the system for client feedback purposes.
 
-## Development server
+## Development server (To Run Project)
+
+You must run `npm install` to ensure all neccesary npm packages for the project are installed, they will be installed as per the dependencies outlined in the configuration of the project.
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Run `ng serve --o` to automatically open the project in the browser once the project is served.
 
 ## Build
 
@@ -22,6 +21,3 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).

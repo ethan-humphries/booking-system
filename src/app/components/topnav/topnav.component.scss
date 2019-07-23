@@ -2,7 +2,6 @@
 
 header {
   display: flex;
-
   top: 0;
   /* center the element */
   right: 0;
@@ -30,7 +29,10 @@ header {
   right: 0;
   border: 2px solid red;
   margin: 10px;
-  float:left;
+  img {
+    max-width: 75px;
+    max-height: 75px;
+  }
 }
 
 .brand-name {
