@@ -23,6 +23,7 @@ export class NewBookingComponent implements OnInit {
   email = new FormControl(null);
   dietOther = new FormControl(null);
   notes = new FormControl(null);
+  panelOpenState;
 
 
   
