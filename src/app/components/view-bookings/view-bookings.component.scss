@@ -22,3 +22,19 @@ tr:hover {
     color: white;
   }
 }
+
+.mat-row:last-of-type {
+  padding-right: 0px;
+}
+
+.mat-cell:last-of-type {
+  padding-right: 0px;
+}
+
+.mat-footer:last-of-type {
+  padding-right: 0px;
+}
+
+.mat-header:last-of-type {
+  padding-right: 0px;
+}

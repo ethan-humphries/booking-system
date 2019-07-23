@@ -15,6 +15,9 @@ import { TopnavModule } from './components/topnav/topnav.module';
 import { ViewBookingsModule } from './components/view-bookings/view-bookings.module';
 import { BookingModule } from './components/booking/booking.module';
 import { DashboardOverviewModule } from './components/dashboard-overview/dashboard-overview.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { fas } from '@fortawesome/free-solid-svg-icons';
+
 
 
 const myRoutes : Routes = [
@@ -39,7 +42,8 @@ const myRoutes : Routes = [
     TopnavModule,
     ViewBookingsModule,
     BookingModule,
-    DashboardOverviewModule
+    DashboardOverviewModule,
+    FontAwesomeModule
   ],
   exports: [
     RouterModule
