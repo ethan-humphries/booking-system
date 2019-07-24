@@ -7,10 +7,10 @@ import { EditDeleteCustomerComponent } from '../edit-delete-customer/edit-delete
 import { ViewCustomersComponent } from '../view-customers/view-customers.component';
 
 const customerRoutes: Routes = [
-    { path: 'new-customer', component: NewCustomerComponent },
-    { path: 'edit-customer', component: EditDeleteCustomerComponent },
-    { path: 'view-customers', component: ViewCustomersComponent }
-  ];
+    { path: 'new-customer', component: NewCustomerComponent, outlet: "customer-managment" },
+    { path: 'edit-customer', component: EditDeleteCustomerComponent, outlet: "customer-managment" },
+    { path: 'view-customers', component: ViewCustomersComponent, outlet: "customer-managment" }
+];
 
 @NgModule({
     declarations: [

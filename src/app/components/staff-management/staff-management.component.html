@@ -1,9 +1,9 @@
 <div class="container">
-    <button mat-raised-button routerLink="/view-staff">View Staff</button>
-    <button mat-raised-button routerLink="/new-staff">New Staff</button>
-    <button mat-raised-button routerLink="/edit-staff">Edit Staff</button>
-    <button mat-raised-button routerLink="/edit-staff">Remove Staff</button>
+    <button mat-raised-button [routerLink]="[{ outlets: { 'staff-managment': ['view-staff'] } }]">View Staff</button>
+    <button mat-raised-button [routerLink]="[{ outlets: { 'staff-managment': ['new-staff'] } }]">New Staff</button>
+    <button mat-raised-button [routerLink]="[{ outlets: { 'staff-managment': ['edit-staff'] } }]">Edit Staff</button>
+    <button mat-raised-button [routerLink]="[{ outlets: { 'staff-managment': ['edit-staff'] } }]">Remove Staff</button>
 </div>
 <div class="container">
-    <router-outlet></router-outlet>
+    <router-outlet name="staff-managment"></router-outlet>
 </div>

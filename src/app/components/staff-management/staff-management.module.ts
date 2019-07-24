@@ -7,10 +7,10 @@ import { EditDeleteStaffComponent } from '../edit-delete-staff/edit-delete-staff
 import { ViewStaffComponent } from '../view-staff/view-staff.component';
 
 const staffRoutes: Routes = [
-    { path: 'new-staff', component: NewStaffComponent },
-    { path: 'edit-staff', component: EditDeleteStaffComponent },
-    { path: 'view-staff', component: ViewStaffComponent }
-  ];
+    { path: 'new-staff', component: NewStaffComponent, outlet: "staff-managment" },
+    { path: 'edit-staff', component: EditDeleteStaffComponent, outlet: "staff-managment" },
+    { path: 'view-staff', component: ViewStaffComponent, outlet: "staff-managment" },
+];
 
 @NgModule({
     declarations: [
