@@ -1,6 +1,9 @@
 <div class="container">
-    <button mat-raised-button>View Customers</button>
-    <button mat-raised-button>New Customer</button>
-    <button mat-raised-button>Edit Customer(s)</button>
-    <button mat-raised-button>Remove Customer(s)</button>
+    <button mat-raised-button routerLink="/view-customers" routerLinkActive="active">View Customers</button>
+    <button mat-raised-button routerLink="/new-customer" routerLinkActive="active">New Customer</button>
+    <button mat-raised-button routerLink="/edit-customer" routerLinkActive="active">Edit Customer(s)</button>
+    <button mat-raised-button routerLink="/edit-customer" routerLinkActive="active">Remove Customer(s)</button>
+</div>
+<div class="container">
+    <router-outlet></router-outlet>
 </div>

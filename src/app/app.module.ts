@@ -17,6 +17,9 @@ import { BookingModule } from './components/booking/booking.module';
 import { DashboardOverviewModule } from './components/dashboard-overview/dashboard-overview.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { fas } from '@fortawesome/free-solid-svg-icons';
+import { NewCustomerModule } from './components/new-customer/new-customer.module';
+import { EditDeleteCustomerModule } from './components/edit-delete-customer/edit.delete-customer.module';
+import { ViewCustomersComponent } from './components/view-customers/view-customers.component';
 
 
 
@@ -26,7 +29,8 @@ const myRoutes : Routes = [
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ViewCustomersComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +47,9 @@ const myRoutes : Routes = [
     ViewBookingsModule,
     BookingModule,
     DashboardOverviewModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    NewCustomerModule,
+    EditDeleteCustomerModule
   ],
   exports: [
     RouterModule
