@@ -2,7 +2,6 @@
 
 header {
   display: flex;
-
   top: 0;
   right: 0;
   left: 0;
@@ -17,6 +16,7 @@ header {
 .header {
   display: flex;
   width: 50%;
+  text-align: center;
 }
 
 .logo {
@@ -25,9 +25,6 @@ header {
   display: inline-block;
   left: 0;
   right: 0;
-  /*border: 2px solid red;*/
-
-
 }
 
 img {

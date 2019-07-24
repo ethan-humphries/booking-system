@@ -1,0 +1,65 @@
+<div class="container">
+    <form>
+        <div class="form-group">
+            <div class="row pt-2">
+                <div class="col">
+                    <label for="customerId">Customer Id</label>
+                    <input type="text" class="form-control" id="customerId" readonly>
+                </div>
+            </div>
+            <div class="row pt-2">
+                <div class="col">
+                    <label for="customerName">Customer Name</label>
+                    <input type="text" class="form-control" id="customerName" required>
+                </div>
+
+                <div class="col">
+                    <label for="phone">Phone</label>
+                    <input type="text" class="form-control" id="phone" required>
+                </div>
+            </div>
+
+            <div class="row pt-2">
+                <div class="col">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" required>
+                </div>
+            </div>
+            <br>
+
+            <div class="row pt-2">
+                <div class="col">
+                    <label for="history">History</label>
+                    <select class="form-control" id="history" placeholder="select">
+                        <option>Excellent</option>
+                        <option>Good</option>
+                        <option>Bad</option>
+                        <option>Banned</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <br>
+                    <div class="form-check">
+                        <input class="form-check-input pl10" type="checkbox" value="" id="highChair">
+                        <label class="form-check-label" for="highChair">High Chair</label><br>
+                        <input class="form-check-input pl10" type="checkbox" value="" id="wheelchair">
+                        <label class="form-check-label" for="wheelchair">Wheelchair</label><br>
+                    </div>
+                </div>
+            </div>
+            <div class="row pt-2">
+                <div class="col">
+                    <label for="dietryRequirements">Dietry Requirements</label>
+                    <textarea class="form-control" id="dietryRequirements" rows="3"></textarea>
+                </div>
+            </div>
+            <div class="row pt-3">
+                <div class="col">
+                    <button type="button" class="btn btn-outline-success">Save Customer Chancges</button>&nbsp;
+                    <button type="button" class="btn btn-outline-warning">Cancel</button>
+                    <button type="button" class="btn btn-outline-danger">Delete Customer</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,9 @@
+<div class="container">
+    <button mat-raised-button [routerLink]="[{ outlets: { 'customer-managment': ['view-customers'] } }]">View Customers</button>
+    <button mat-raised-button [routerLink]="[{ outlets: { 'customer-managment': ['new-customer'] } }]">New Customer</button>
+    <button mat-raised-button [routerLink]="[{ outlets: { 'customer-managment': ['edit-customer'] } }]">Edit Customer(s)</button>
+    <button mat-raised-button [routerLink]="[{ outlets: { 'customer-managment': ['edit-customer'] } }]">Remove Customer(s)</button>
+</div>
+<div class="container">
+    <router-outlet name="customer-managment"></router-outlet>
+</div>
