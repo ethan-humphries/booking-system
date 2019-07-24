@@ -12,4 +12,4 @@ import { NewCustomerComponent } from './new-customer.component';
     ],
     providers: []
 })
-export class EditDeleteStaffModule { }
+export class NewCustomerModule { }

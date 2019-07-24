@@ -16,13 +16,13 @@ import { ViewBookingsModule } from './components/view-bookings/view-bookings.mod
 import { BookingModule } from './components/booking/booking.module';
 import { DashboardOverviewModule } from './components/dashboard-overview/dashboard-overview.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { fas } from '@fortawesome/free-solid-svg-icons';
-
-
-
-const myRoutes : Routes = [
-  { path : 'dashboard-component', component : DashboardComponent},
-];
+import { NewCustomerModule } from './components/new-customer/new-customer.module';
+import { EditDeleteCustomerModule } from './components/edit-delete-customer/edit.delete-customer.module';
+import { ViewCustomersModule } from './components/view-customers/view-customers.module';
+import { NewStaffModule } from './components/new-staff/new-staff.module';
+import { EditDeleteStaffModule } from './components/edit-delete-staff/edit-delete.staff.module';
+import { ViewStaffModule } from './components/view-staff/view-staff.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -43,10 +43,18 @@ const myRoutes : Routes = [
     ViewBookingsModule,
     BookingModule,
     DashboardOverviewModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    NewCustomerModule,
+    EditDeleteCustomerModule,
+    ViewCustomersModule,
+    NewStaffModule,
+    EditDeleteStaffModule,
+    ViewStaffModule,
+    NgbModule
   ],
   exports: [
-    RouterModule
+    RouterModule,
+    NgbModule
   ],
   providers: [
   ],
