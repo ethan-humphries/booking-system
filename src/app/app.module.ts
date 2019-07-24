@@ -16,21 +16,18 @@ import { ViewBookingsModule } from './components/view-bookings/view-bookings.mod
 import { BookingModule } from './components/booking/booking.module';
 import { DashboardOverviewModule } from './components/dashboard-overview/dashboard-overview.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { fas } from '@fortawesome/free-solid-svg-icons';
 import { NewCustomerModule } from './components/new-customer/new-customer.module';
 import { EditDeleteCustomerModule } from './components/edit-delete-customer/edit.delete-customer.module';
-import { ViewCustomersComponent } from './components/view-customers/view-customers.component';
-
-
-
-const myRoutes : Routes = [
-  { path : 'dashboard-component', component : DashboardComponent},
-];
+import { ViewCustomersModule } from './components/view-customers/view-customers.module';
+import { NewStaffModule } from './components/new-staff/new-staff.module';
+import { EditDeleteStaffModule } from './components/edit-delete-staff/edit-delete.staff.module';
+import { ViewStaffModule } from './components/view-staff/view-staff.module';
+import { CustomerManagementModule } from './components/customer-management/customer-management.module';
+import { StaffManagementModule } from './components/staff-management/staff-management.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    ViewCustomersComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +46,11 @@ const myRoutes : Routes = [
     DashboardOverviewModule,
     FontAwesomeModule,
     NewCustomerModule,
-    EditDeleteCustomerModule
+    EditDeleteCustomerModule,
+    ViewCustomersModule,
+    NewStaffModule,
+    EditDeleteStaffModule,
+    ViewStaffModule
   ],
   exports: [
     RouterModule

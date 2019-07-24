@@ -2,12 +2,11 @@ import { NgModule } from '@angular/core';
 import { CustomerManagementComponent } from './customer-management.component';
 import { MatButtonModule } from '@angular/material/button';
 import { RouterModule, Routes } from '@angular/router';
-import { EditDeleteCustomerComponent } from '../edit-delete-customer/edit-delete-customer.component';
-import { DashboardComponent } from '../dashboard/dashboard.component';
 import { NewCustomerComponent } from '../new-customer/new-customer.component';
+import { EditDeleteCustomerComponent } from '../edit-delete-customer/edit-delete-customer.component';
 import { ViewCustomersComponent } from '../view-customers/view-customers.component';
 
-const appRoutes: Routes = [
+const customerRoutes: Routes = [
     { path: 'new-customer', component: NewCustomerComponent },
     { path: 'edit-customer', component: EditDeleteCustomerComponent },
     { path: 'view-customers', component: ViewCustomersComponent }
@@ -19,7 +18,7 @@ const appRoutes: Routes = [
     ],
     imports: [
         RouterModule.forRoot(
-            appRoutes,
+            customerRoutes,
             { enableTracing: false } // <-- debugging purposes only
         ),
         MatButtonModule
