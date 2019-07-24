@@ -1,4 +1,4 @@
-
+<form [formGroup]="newbookingform">
     <mat-accordion class="newBooking">
         <mat-expansion-panel (opened)="panelOpenState = true"
                              (closed)="panelOpenState = false">
@@ -23,10 +23,10 @@
                 <p class="largeBookingMsg">For bookings of 14+ guests, a sharing menu is suggested. Please contact the club on 02 9428 5155 to
                     discuss</p>
                 <mat-form-field>
-                    <input matInput placeholder="Time of Booking" [formControl]="time">    
+                    <input type="time" matInput placeholder="Time of Booking" [formControl]="time">    
                 </mat-form-field>
                 <mat-form-field>
-                    <input matInput placeholder="Table Number" [formControl]="tableNumber">
+                    <input type="number" matInput placeholder="Table Number" [formControl]="tableNumber">
                 </mat-form-field>
          </mat-expansion-panel>
          
@@ -42,10 +42,10 @@
             </mat-expansion-panel-header>
             
             <mat-form-field>
-                <input matInput placeholder="First Name" [formControl]="firstName">
+                <input type="text" matInput placeholder="First Name" [formControl]="firstName">
              </mat-form-field>
              <mat-form-field>
-                <input matInput placeholder="Last Name" [formControl]="lastName">
+                <input type="text" matInput placeholder="Last Name" [formControl]="lastName">
              </mat-form-field>
              <mat-form-field>
                 <input matInput placeholder="Phone Number" [formControl]="phoneNumber">
@@ -71,10 +71,10 @@
                     <mat-card-title>Dietary Requirements</mat-card-title>
                 </mat-card-header>
                 <mat-card-content>
-                    <mat-checkbox>Vegetarian</mat-checkbox>
-                    <mat-checkbox>Gluten Free</mat-checkbox>
-                    <mat-checkbox>Dairy Free</mat-checkbox>
-                    <mat-checkbox>Other</mat-checkbox>
+                    <mat-checkbox class="checkbox">Vegetarian</mat-checkbox>
+                    <mat-checkbox class="checkbox">Gluten Free</mat-checkbox>
+                    <mat-checkbox class="checkbox">Dairy Free</mat-checkbox>
+                    <mat-checkbox class="checkbox">Other</mat-checkbox>
                     <mat-form-field>
                         <input matInput placeholder="Please enter details" [formControl]="dietOther">
                     </mat-form-field>
@@ -86,11 +86,11 @@
                 </mat-card-header>
                 <mat-card-content>
                     <p>Will you require a highchair?</p>
-                    <mat-checkbox>Yes</mat-checkbox>
-                    <mat-checkbox>No</mat-checkbox>
+                    <mat-checkbox class="checkbox">Yes</mat-checkbox>
+                    <mat-checkbox class="checkbox">No</mat-checkbox>
                     <p>Will you require wheelchair accessible seating?</p>
-                    <mat-checkbox>Yes</mat-checkbox>
-                    <mat-checkbox>No</mat-checkbox>
+                    <mat-checkbox class="checkbox">Yes</mat-checkbox>
+                    <mat-checkbox class="checkbox">No</mat-checkbox>
                 </mat-card-content>
             </mat-card>
             <mat-card>
@@ -109,9 +109,10 @@
          
     </mat-accordion>
     <div class="buttons">
-        <button class="confirmButton" mat-raised-button>CONFIRM BOOKING</button>
-        <button class="clearButton" mat-raised-button>CLEAR FORM</button>
+        <button class="confirmButton" type="submit" mat-raised-button>CONFIRM BOOKING</button>
+        <button class="clearButton" type="reset" mat-raised-button>CLEAR FORM</button>
     </div>
             <!--all inputs require a formControl tag -  this two way data binds the form field to a variable in the typescript file-->
                 
             <!--all oinputs in materials need to be wrapped as a matt form field-->
+</form>
