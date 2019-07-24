@@ -22,8 +22,7 @@ import { ViewCustomersModule } from './components/view-customers/view-customers.
 import { NewStaffModule } from './components/new-staff/new-staff.module';
 import { EditDeleteStaffModule } from './components/edit-delete-staff/edit-delete.staff.module';
 import { ViewStaffModule } from './components/view-staff/view-staff.module';
-import { CustomerManagementModule } from './components/customer-management/customer-management.module';
-import { StaffManagementModule } from './components/staff-management/staff-management.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -50,10 +49,12 @@ import { StaffManagementModule } from './components/staff-management/staff-manag
     ViewCustomersModule,
     NewStaffModule,
     EditDeleteStaffModule,
-    ViewStaffModule
+    ViewStaffModule,
+    NgbModule
   ],
   exports: [
-    RouterModule
+    RouterModule,
+    NgbModule
   ],
   providers: [
   ],

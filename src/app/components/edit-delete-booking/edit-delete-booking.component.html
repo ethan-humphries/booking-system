@@ -1,7 +1,21 @@
-<h2 mat-dialog-title>Edit Booking</h2>
-<mat-dialog-content>Edit booking details</mat-dialog-content>
-<mat-dialog-actions>
-  <button mat-button mat-dialog-close>Cancel</button>
-  <!-- The mat-dialog-close directive optionally accepts a value as a result for the dialog. -->
-  <button mat-button [mat-dialog-close]="true">Save</button>
-</mat-dialog-actions>
+<form>
+    <div class="form-group">
+        <label for="bookingId"> Booking Id</label>
+        <input type="text" class="form-control" id="bookingId" readonly>
+
+        <label for="bookingName"> Booking Name</label>
+        <input type="text" class="form-control" id="bookingName" required>
+
+        <label for="customerName">Customer Name</label>
+        <input type="text" class="form-control" id="customerName" required>
+
+        <label for="date">Date</label>
+        <input type="text" class="form-control" id="date" required>
+
+        <label for="time">Time</label>
+        <input type="text" class="form-control" id="time" required>
+
+        <label for="duration">Duration</label>
+        <input type="text" class="form-control" id="duration" required>
+    </div>
+</form>
