@@ -1,21 +1,81 @@
 <form>
     <div class="form-group">
-        <label for="bookingId"> Booking Id</label>
-        <input type="text" class="form-control" id="bookingId" readonly>
+        <div class="row">
+            <div class="col">
+                <label for="bookingId"> Booking Id</label>
+                <input type="text" class="form-control" id="bookingId" readonly>
+            </div>
 
-        <label for="bookingName"> Booking Name</label>
-        <input type="text" class="form-control" id="bookingName" required>
+            <div class="col">
+                <label for="bookingName"> Booking Name</label>
+                <input type="text" class="form-control" id="bookingName" required>
+            </div>
+        </div>
 
-        <label for="customerName">Customer Name</label>
-        <input type="text" class="form-control" id="customerName" required>
+        <div class="row">
+            <div class="col">
+                <label for="customerName">Customer Name</label>
+                <input type="text" class="form-control" id="customerName" required>
+            </div>
 
-        <label for="date">Date</label>
-        <input type="text" class="form-control" id="date" required>
+            <div class="col">
+                <label for="date">Date</label>
+                <input type="date" class="form-control" id="date" required>
+            </div>
+        </div>
 
-        <label for="time">Time</label>
-        <input type="text" class="form-control" id="time" required>
+        <div class="row">
+            <div class="col">
+                <label for="time">Time</label>
+                <input type="time" class="form-control" id="time" required>
+            </div>
 
-        <label for="duration">Duration</label>
-        <input type="text" class="form-control" id="duration" required>
+            <div class="col">
+                <label for="duration">Duration</label>
+                <input type="text" class="form-control" id="duration" required>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col">
+                <label for="guests">Guests</label>
+                <input type="number" class="form-control" id="guests" required>
+            </div>
+
+            <div class="col">
+                <label for="table">Table</label>
+                <input type="text" class="form-control" id="table" required>
+            </div>
+        </div>
+
+        <label for="notes">Notes</label>
+        <textarea class="form-control" id="notes" rows="3"></textarea>
+        <br><br>
+
+        <div class="row">
+            <div class="col">
+                <label for="status">Status</label>
+                <select class="form-control" id="status" placeholder="select">
+                    <option>Active</option>
+                    <option>Complete</option>
+                    <option>Cancelled</option>
+                    <option>No Show</option>
+                </select>
+            </div>
+            <div class="col">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="checkedIn">
+                    <label class="form-check-label" for="checkedIn">Checked In</label><br>
+                    <input class="form-check-input pl10" type="checkbox" value="" id="highChair">
+                    <label class="form-check-label" for="highChair">High Chair</label><br>
+                    <input class="form-check-input pl10" type="checkbox" value="" id="wheelchair">
+                    <label class="form-check-label" for="wheelchair">Wheelchair</label><br>
+                </div>
+            </div>
+        </div>
+
+        <label for="dietryRequirements">Dietry Requirements</label>
+        <textarea class="form-control" id="dietryRequirements" rows="3"></textarea>
     </div>
 </form>
