@@ -4,22 +4,19 @@ header {
   display: flex;
 
   top: 0;
-  /* center the element */
   right: 0;
   left: 0;
   margin-right: auto;
   margin-left: auto;
   width: 100%;
-  margin-bottom: 2%;
   border-radius: 0px 0px 8px 8px;
   border-bottom: 4px solid gray;
+  padding-top: 2px;
 }
 
 .header {
   display: flex;
   width: 50%;
-  border: 2px solid yellow;
-  text-align: center;
 }
 
 .logo {
@@ -28,9 +25,14 @@ header {
   display: inline-block;
   left: 0;
   right: 0;
-  border: 2px solid red;
-  margin: 10px;
-  float:left;
+  /*border: 2px solid red;*/
+
+
+}
+
+img {
+  max-width: 75px;
+  max-height: 75px;
 }
 
 .brand-name {
@@ -40,18 +42,16 @@ header {
 
 
 .topnav {
-  margin: 10px;
   right: 0;
   margin-left: auto;
   text-align: center;
-  border: 2px solid blue;
+  /* border: 2px solid blue;*/
 }
 
 .icon-group {
   float: left;
   height: 60px;
   width: 60px;
-  border: 2px solid red;
   margin: 10px;
 }
 
@@ -66,7 +66,12 @@ header {
   margin-right: auto;
   margin-left: auto;
   text-align: center;
-  border:2px solid purple;
 }
 
-
+button{
+  background:none;
+  border:none;
+}
+button:hover{
+  background-color: azure;
+}
