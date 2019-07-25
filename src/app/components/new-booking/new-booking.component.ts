@@ -23,11 +23,12 @@ export class NewBookingComponent implements OnInit {
   email = new FormControl(null);
   dietOther = new FormControl(null);
   notes = new FormControl(null);
-  form: FormGroup
+  newbookingform: FormGroup;
+  panelOpenState;
 
-
-  
-  constructor(private bookingService: BookingService) { }
+  constructor(private bookingService: BookingService) {
+    this.newbookingform =  new FormGroup({date: this.date}); // the form group needs to be initialised, and each form control needs to be passed in with a key and value
+   }
 
   ngOnInit() {
     this.booking =  new Booking();
