@@ -23,10 +23,16 @@ import { NewStaffModule } from './components/new-staff/new-staff.module';
 import { EditDeleteStaffModule } from './components/edit-delete-staff/edit-delete.staff.module';
 import { ViewStaffModule } from './components/view-staff/view-staff.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { SettingsDashboardComponent } from './components/settings-dashboard/settings-dashboard.component';
+import { AccountSettingsComponent } from './components/account-settings/account-settings.component';
+import { HelpComponent } from './components/help/help.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SettingsDashboardComponent,
+    AccountSettingsComponent,
+    HelpComponent
   ],
   imports: [
     BrowserModule,
