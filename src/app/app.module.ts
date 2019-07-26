@@ -22,11 +22,13 @@ import { NewStaffModule } from './components/new-staff/new-staff.module';
 import { EditDeleteStaffModule } from './components/edit-delete-staff/edit-delete.staff.module';
 import { ViewStaffModule } from './components/view-staff/view-staff.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HelpComponent } from './components/help/help.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HelpComponent
   ],
   imports: [
     BrowserModule,
