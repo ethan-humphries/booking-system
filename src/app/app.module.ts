@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardModule } from './components/dashboard/dashboard.module';
 import { EditDeleteBookingModule } from './components/edit-delete-booking/edit-delete-booking.module';
@@ -23,16 +22,11 @@ import { NewStaffModule } from './components/new-staff/new-staff.module';
 import { EditDeleteStaffModule } from './components/edit-delete-staff/edit-delete.staff.module';
 import { ViewStaffModule } from './components/view-staff/view-staff.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { SettingsDashboardComponent } from './components/settings-dashboard/settings-dashboard.component';
-import { AccountSettingsComponent } from './components/account-settings/account-settings.component';
-import { HelpComponent } from './components/help/help.component';
+
 
 @NgModule({
   declarations: [
-    AppComponent,
-    SettingsDashboardComponent,
-    AccountSettingsComponent,
-    HelpComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,

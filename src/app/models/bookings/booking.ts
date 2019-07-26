@@ -1,6 +1,7 @@
 import { Time } from '@angular/common';
 
 export class Booking {
+    bookingId?: number;
     staffId: number;
     bookingName: string;
     customerName?: string;
