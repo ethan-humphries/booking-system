@@ -3,7 +3,6 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { Booking, BookingStatus } from 'src/app/models/bookings/booking';
 import { Observable } from 'rxjs';
 import { Bookings } from 'src/app/models/bookings/bookings';
-import { of } from 'rxjs';
 
 
 // this will be the url of our API

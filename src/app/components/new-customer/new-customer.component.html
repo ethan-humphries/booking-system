@@ -4,19 +4,19 @@
             <div class="row pt-2">
                 <div class="col">
                     <label for="customerName">Customer Name</label>
-                    <input type="text" class="form-control" id="customerName" required>
+                    <input type="text" class="form-control" [(ngModel)]="customer.customerName" name="customerName" #ctrl="ngModel" id="customerName" required>
                 </div>
 
                 <div class="col">
                     <label for="phone">Phone</label>
-                    <input type="text" class="form-control" id="phone" required>
+                    <input type="text" class="form-control" [(ngModel)]="customer.phone" name="phone" #ctrl="ngModel" id="phone" required>
                 </div>
             </div>
 
             <div class="row pt-2">
                 <div class="col">
                     <label for="email">Email</label>
-                    <input type="email" class="form-control" id="email" required>
+                    <input type="email" class="form-control" [(ngModel)]="customer.email" name="email" #ctrl="ngModel" id="email" required>
                 </div>
             </div>
             <br>
@@ -24,32 +24,23 @@
             <div class="row pt-2">
                 <div class="col">
                     <label for="history">History</label>
-                    <select class="form-control" id="history" placeholder="select">
+                    <select class="form-control" id="history" [(ngModel)]="customer.history" name="history" #ctrl="ngModel" placeholder="select">
                         <option>Excellent</option>
                         <option>Good</option>
                         <option>Bad</option>
                         <option>Banned</option>
                     </select>
                 </div>
-                <div class="col">
-                    <br>
-                    <div class="form-check">
-                        <input class="form-check-input pl10" type="checkbox" value="" id="highChair">
-                        <label class="form-check-label" for="highChair">High Chair</label><br>
-                        <input class="form-check-input pl10" type="checkbox" value="" id="wheelchair">
-                        <label class="form-check-label" for="wheelchair">Wheelchair</label><br>
-                    </div>
-                </div>
             </div>
             <div class="row pt-2">
                 <div class="col">
                     <label for="dietryRequirements">Dietry Requirements</label>
-                    <textarea class="form-control" id="dietryRequirements" rows="3"></textarea>
+                    <textarea class="form-control" [(ngModel)]="customer.dietryRequirements" name="dietryRequirements" #ctrl="ngModel" id="dietryRequirements" rows="3"></textarea>
                 </div>
             </div>
             <div class="row pt-3">
                 <div class="col">
-                    <button type="button" class="btn btn-outline-success">Save Customer</button>&nbsp;
+                    <button type="button" class="btn btn-outline-success" (click)="saveCustomer()">Save Customer</button>&nbsp;
                     <button type="button" class="btn btn-outline-danger">Cancel</button>
                 </div>
             </div>
