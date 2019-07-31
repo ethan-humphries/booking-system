@@ -15,7 +15,11 @@ export class Booking {
     notes?: string;
     highchairRequired?: boolean;
     wheelchair?: boolean;
-    dietryRequirements?: any;
+    dietOther?: any;
+    vegetarian?: boolean;
+    glutenFree?: boolean;
+    dairyFree?: boolean;
+    other?: boolean;
 }
 
 export enum BookingStatus {
