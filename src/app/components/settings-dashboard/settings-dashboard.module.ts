@@ -1,13 +1,15 @@
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SettingsDashboardComponent } from './settings-dashboard.component';
+import { AccountSettingsModule } from '../account-settings/account-settings.module';
 
 @NgModule({
   declarations: [
     SettingsDashboardComponent
   ],
   imports: [
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AccountSettingsModule
   ],
   exports: [
     SettingsDashboardComponent
