@@ -1,6 +1,7 @@
 import { Time } from '@angular/common';
 
 export class Booking {
+    bookingId?: number;
     staffId: number;
     bookingName: string;
     customerName?: string;
@@ -14,7 +15,11 @@ export class Booking {
     notes?: string;
     highchairRequired?: boolean;
     wheelchair?: boolean;
-    dietryRequirements?: any;
+    dietOther?: any;
+    vegetarian?: boolean;
+    glutenFree?: boolean;
+    dairyFree?: boolean;
+    other?: boolean;
 }
 
 export enum BookingStatus {

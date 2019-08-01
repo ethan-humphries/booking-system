@@ -39,4 +39,35 @@ export class ViewBookingsComponent implements OnInit {
     return this.bookingService.getAllBookingsByUserId(1);
   }
 
+  deleteBooking(bookingId: any) {
+    var result = window.confirm('Are you sure you want to delete booking: ' + bookingId + '?');
+    if (result == true ) {
+      alert('Booking Removed');
+      // remove booking using booking service -  this.bookingService.deleteBooking(bookingId);
+    } else if ( result == false) {
+      // do nothing
+    } else {
+      // do nothing - exception only
+    }
+  }
+
+  getBookingStatus(status: BookingStatus) {
+    switch(status) {
+      case BookingStatus.active: {
+        return 'Active';
+      }
+      case BookingStatus.cancelled: {
+        return 'Cancelled';
+      }
+      case BookingStatus.complete: {
+        return 'Complete';
+      }
+      case BookingStatus.noShow: {
+        return 'No Show';
+      }
+      default: {
+        return 'Unknown';
+      }
+    }
+  }
 }
