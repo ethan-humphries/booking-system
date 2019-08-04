@@ -16,11 +16,13 @@ import { faTrash } from '@fortawesome/free-solid-svg-icons';
 export class ViewBookingsComponent implements OnInit {
   displayedColumns: string[] = ['staffId', 'bookingName', 'customerName', 'date', 'duration', 'guests', 'table', 'status', 'checkedIn', 'notes', 'edit'];
   dataSource;
-  date = new FormControl(new Date());
-  serializedDate = new FormControl((new Date()).toISOString());
+  fromDate = new FormControl(new Date());
+  toDate = new FormControl(new Date());
   bookings: Booking[];
   faEdit = faEdit;
   faTrash = faTrash;
+  bookingName =  new FormControl('');
+  customerName = new FormControl('');
 
   @ViewChild(MatSort, { static: true }) sort: MatSort;
 
@@ -69,5 +71,12 @@ export class ViewBookingsComponent implements OnInit {
         return 'Unknown';
       }
     }
+  }
+
+  searchClick() {
+    console.log('Name:' , this.bookingName.value);
+    console.log('Customer:' , this.customerName.value);
+    console.log('From Date:' , this.fromDate.value);
+    console.log('To Date:' , this.toDate.value);
   }
 }
