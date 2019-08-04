@@ -45,5 +45,4 @@ export class NewBookingComponent implements OnInit {
     console.log('Form Valid? ', this.newbookingform.status);
     console.log('Form Data: ', this.newbookingform.value);
   }
-
 }
