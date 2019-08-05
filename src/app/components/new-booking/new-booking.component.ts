@@ -37,13 +37,12 @@ export class NewBookingComponent implements OnInit {
   ngOnInit() {
   }
 
-  private newBooking() {
+  newBooking() {
 
   }
 
-  private saveBookingTest() {
+  saveBookingTest() {
     console.log('Form Valid? ', this.newbookingform.status);
     console.log('Form Data: ', this.newbookingform.value);
   }
-
 }

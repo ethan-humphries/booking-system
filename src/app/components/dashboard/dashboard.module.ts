@@ -7,6 +7,7 @@ import { NewBookingModule } from '../new-booking/new-booking.module';
 import { DashboardOverviewModule } from '../dashboard-overview/dashboard-overview.module';
 import { CustomerManagementModule } from '../customer-management/customer-management.module';
 import { StaffManagementModule } from '../staff-management/staff-management.module';
+import { SettingsDashboardModule } from '../settings-dashboard/settings-dashboard.module';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { StaffManagementModule } from '../staff-management/staff-management.modu
     NewBookingModule,
     DashboardOverviewModule,
     CustomerManagementModule,
-    StaffManagementModule
+    StaffManagementModule,
+    SettingsDashboardModule
   ],
   exports: [
     DashboardComponent
