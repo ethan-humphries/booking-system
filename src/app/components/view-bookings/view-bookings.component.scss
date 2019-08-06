@@ -12,7 +12,7 @@ mat-form-field {
 }
 
 .filter-options {
-  float: right;
+  justify-content: center;
 }
 
 tr:hover {
@@ -21,4 +21,25 @@ tr:hover {
   th {
     color: white;
   }
+}
+
+.mat-row:last-of-type {
+  padding-right: 0px;
+}
+
+.mat-cell:last-of-type {
+  padding-right: 0px;
+}
+
+.mat-footer:last-of-type {
+  padding-right: 0px;
+}
+
+.mat-header:last-of-type {
+  padding-right: 0px;
+}
+
+.Active {
+  border: 1px solid greenyellow;
+  background-color: greenyellow;
 }

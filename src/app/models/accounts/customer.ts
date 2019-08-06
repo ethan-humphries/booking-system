@@ -4,4 +4,5 @@ export class Customer {
     phone: string;
     email: string;
     history: string;
+    dietryRequirements: any;
 }

@@ -1,30 +1,74 @@
-
 @import "../../../styles.css";
 
-.topnav {
+header {
+  display: flex;
   top: 0;
-  /* center the element */
   right: 0;
   left: 0;
   margin-right: auto;
   margin-left: auto;
   width: 100%;
-  text-align: center;
-  // border-bottom: 2px solid gray; // my changes conflicting with nathans
-  margin-bottom: 2%;
-}
-  
-header {
-  display: flex;
   border-radius: 0px 0px 8px 8px;
-  text-align: center;
-  border: 2px solid red;
+  border-bottom: 4px solid gray;
+  padding-top: 2px;
 }
 
 .header {
   display: flex;
-  width: 100%;
-  border: 2px solid yellow;
+  width: 50%;
   text-align: center;
 }
 
+.logo {
+  width: 80px;
+  height: 80px;
+  display: inline-block;
+  left: 0;
+  right: 0;
+}
+
+img {
+  max-width: 75px;
+  max-height: 75px;
+}
+
+.brand-name {
+  float: Left;
+  text-align: center;
+}
+
+
+.topnav {
+  right: 0;
+  margin-left: auto;
+  text-align: center;
+  /* border: 2px solid blue;*/
+}
+
+.icon-group {
+  float: left;
+  height: 60px;
+  width: 60px;
+  margin: 10px;
+}
+
+.icon-icon {
+  margin-right: auto;
+  margin-left: auto;
+  width: 42px;
+  height: 42px;
+}
+
+.icon-text {
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+}
+
+button{
+  background:none;
+  border:none;
+}
+button:hover{
+  background-color: azure;
+}

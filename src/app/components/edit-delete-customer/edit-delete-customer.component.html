@@ -1,0 +1,63 @@
+<div class="container">
+    <form>
+        <div class="form-group">
+            <div class="row pt-2">
+                <div class="col">
+                    <label for="customerId">Customer Id</label>
+                    <input type="text" [(ngModel)]="customer.customerId" #ctrl="ngModel" name="customerId"
+                        class="form-control" id="customerId" readonly>
+                </div>
+            </div>
+            <div class="row pt-2">
+                <div class="col">
+                    <label for="customerName">Customer Name</label>
+                    <input type="text" [(ngModel)]="customer.customerName" name="customerName" #ctrl="ngModel"
+                        class="form-control" id="customerName" required>
+                </div>
+
+                <div class="col">
+                    <label for="phone">Phone</label>
+                    <input type="text" [(ngModel)]="customer.phone" #ctrl="ngModel" name="phone" class="form-control"
+                        id="phone" required>
+                </div>
+            </div>
+
+            <div class="row pt-2">
+                <div class="col">
+                    <label for="email">Email</label>
+                    <input type="email" [(ngModel)]="customer.email" #ctrl="ngModel" name="email" class="form-control"
+                        id="email" required>
+                </div>
+            </div>
+            <br>
+
+            <div class="row pt-2">
+                <div class="col">
+                    <label for="history">History</label>
+                    <select class="form-control" [(ngModel)]="customer.history" #ctrl="ngModel" name="history"
+                        id="history" placeholder="select">
+                        <option value="Excellent">Excellent</option>
+                        <option value="Good">Good</option>
+                        <option value="Bad">Bad</option>
+                        <option value="Banned">Banned</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row pt-2">
+                <div class="col">
+                    <label for="dietryRequirements">Dietry Requirements</label>
+                    <textarea [(ngModel)]="customer.dietryRequirements" #ctrl="ngModel" name="dietryRequirements"
+                        class="form-control" id="dietryRequirements" rows="3"></textarea>
+                </div>
+            </div>
+            <div class="row pt-3">
+                <div class="col">
+                    <button type="button" class="btn btn-outline-success" (click)="saveCustomer()">Save Customer
+                        Chancges</button>&nbsp;
+                    <button type="button" class="btn btn-outline-warning">Cancel</button>&nbsp;
+                    <button type="button" class="btn btn-outline-danger">Delete Customer</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

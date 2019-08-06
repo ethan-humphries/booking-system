@@ -1,40 +1,12 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Bookings } from 'src/app/models/bookings/bookings';
 import { Booking, BookingStatus } from 'src/app/models/bookings/booking';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { FormControl } from '@angular/forms';
 import { BookingService } from 'src/app/services/bookings/booking-service.service';
+import { faEdit } from '@fortawesome/free-solid-svg-icons';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
-const BOOKING_DATA: Booking[] = [
-  {staffId: 123, bookingName: 'Ethan', customerName: 'Ethan', date: new Date() , duration: 1.5, numberOfPeople: 3, table: 1,
-  status: BookingStatus.active,checkedIn: true, notes: 'Fussy'}, 
-  {staffId: 123, bookingName: 'Josh', customerName: 'Ethan', date: new Date() , duration: 0.5, numberOfPeople: 5, table: 2,
-  status: BookingStatus.active,checkedIn: true, notes: 'Fussy'}, 
-  {staffId: 123, bookingName: 'Ethan', customerName: 'Ethan', date: new Date() , duration: '30 min', numberOfPeople: 2, table: 3,
-  status: BookingStatus.active,checkedIn: true, notes: 'Fussy'}, 
-  {staffId: 123, bookingName: 'Ethan', customerName: 'Ethan', date: new Date() , duration: 2, numberOfPeople: 3, table: 4,
-  status: BookingStatus.active,checkedIn: true, notes: 'Fussy'}, 
-  {staffId: 123, bookingName: 'Nathan', customerName: 'Ethan', date: new Date() , duration: 1.5, numberOfPeople: 2, table: 4,
-  status: BookingStatus.active,checkedIn: true, notes: 'Fussy'}, 
-  {staffId: 123, bookingName: 'Ethan', customerName: 'Ethan', date: new Date() , duration: 2, numberOfPeople: 3, table: 2,
-  status: BookingStatus.active,checkedIn: true, notes: 'Fussy'}, 
-  {staffId: 123, bookingName: 'Steven', customerName: 'Ethan', date: new Date() , duration: 1.5, numberOfPeople: 7, table: 4,
-  status: BookingStatus.active,checkedIn: true, notes: 'Fussy'}, 
-  {staffId: 123, bookingName: 'Peter', customerName: 'Ethan', date: new Date() , duration: 3, numberOfPeople: 8, table: 5,
-  status: BookingStatus.active,checkedIn: true, notes: 'Fussy'}, 
-  {staffId: 123, bookingName: 'Josh', customerName: 'Ethan', date: new Date() , duration: '35 min', numberOfPeople: 5, table: 6,
-  status: BookingStatus.active,checkedIn: true, notes: 'Fussy'}, 
-  {staffId: 123, bookingName: 'Dave', customerName: 'Ethan', date: new Date() , duration: 1.5, numberOfPeople: 7, table: 4,
-  status: BookingStatus.active,checkedIn: true, notes: 'Fussy'}, 
-  {staffId: 123, bookingName: 'Ethan', customerName: 'Ethan', date: new Date() , duration: '45 min', numberOfPeople: 2, table: 5,
-  status: BookingStatus.active,checkedIn: true, notes: 'Fussy'}, 
-  {staffId: 123, bookingName: 'Ethan', customerName: 'Ethan', date: new Date() , duration: '1 h 20', numberOfPeople: 3, table: 8,
-  status: BookingStatus.active,checkedIn: true, notes: 'Fussy'}, 
-  {staffId: 123, bookingName: 'Ethan', customerName: 'Ethan', date: new Date() , duration: 4, numberOfPeople: 3, table: 9,
-  status: BookingStatus.active,checkedIn: true, notes: 'Fussy'}
-
-];
 
 @Component({
   selector: 'app-view-bookings',
@@ -42,17 +14,69 @@ const BOOKING_DATA: Booking[] = [
   styleUrls: ['./view-bookings.component.scss']
 })
 export class ViewBookingsComponent implements OnInit {
-  displayedColumns: string[] = ['staffId', 'bookingName', 'customerName', 'date', 'duration', 'guests', 'table', 'status', 'checkedIn', 'notes'];
-  dataSource = new MatTableDataSource(BOOKING_DATA);
-  date = new FormControl(new Date());
-  serializedDate = new FormControl((new Date()).toISOString());
+  displayedColumns: string[] = ['staffId', 'bookingName', 'customerName', 'date', 'duration', 'guests', 'table', 'status', 'checkedIn', 'notes', 'edit'];
+  dataSource;
+  fromDate = new FormControl(new Date());
+  toDate = new FormControl(new Date());
+  bookings: Booking[];
+  faEdit = faEdit;
+  faTrash = faTrash;
+  bookingName =  new FormControl('');
+  customerName = new FormControl('');
 
-  @ViewChild(MatSort, {static: true}) sort: MatSort;
+  @ViewChild(MatSort, { static: true }) sort: MatSort;
 
   constructor(private bookingService: BookingService) { }
 
   ngOnInit() {
+    this.bookings = this.getBookings();
+    if (this.bookings) {
+      this.dataSource = new MatTableDataSource(this.bookings);
+    }
     this.dataSource.sort = this.sort;
+
   }
 
+  getBookings() {
+    return this.bookingService.getAllBookingsByUserId(1);
+  }
+
+  deleteBooking(bookingId: any) {
+    var result = window.confirm('Are you sure you want to delete booking: ' + bookingId + '?');
+    if (result == true ) {
+      alert('Booking Removed');
+      // remove booking using booking service -  this.bookingService.deleteBooking(bookingId);
+    } else if ( result == false) {
+      // do nothing
+    } else {
+      // do nothing - exception only
+    }
+  }
+
+  getBookingStatus(status: BookingStatus) {
+    switch(status) {
+      case BookingStatus.active: {
+        return 'Active';
+      }
+      case BookingStatus.cancelled: {
+        return 'Cancelled';
+      }
+      case BookingStatus.complete: {
+        return 'Complete';
+      }
+      case BookingStatus.noShow: {
+        return 'No Show';
+      }
+      default: {
+        return 'Unknown';
+      }
+    }
+  }
+
+  searchClick() {
+    console.log('Name:' , this.bookingName.value);
+    console.log('Customer:' , this.customerName.value);
+    console.log('From Date:' , this.fromDate.value);
+    console.log('To Date:' , this.toDate.value);
+  }
 }
