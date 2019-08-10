@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators, FormArray } from '@angular/forms';
 import { BookingService } from 'src/app/services/bookings/booking-service.service';
 import { Booking } from 'src/app/models/bookings/booking';
-import { format } from 'url';
 
 @Component({
   selector: 'app-new-booking',
@@ -12,9 +11,11 @@ import { format } from 'url';
 export class NewBookingComponent implements OnInit {
   newbookingform: FormGroup;
   panelOpenState;
+  booking: Booking;
 
   constructor(private bookingService: BookingService) {
-    this.newbookingform =  new FormGroup({
+    this.booking = new Booking();
+    this.newbookingform = new FormGroup({
       date: new FormControl(new Date(), Validators.required),
       noOfGuests: new FormControl('', Validators.required),
       tableNumber: new FormControl('', Validators.required),
@@ -25,24 +26,43 @@ export class NewBookingComponent implements OnInit {
       email: new FormControl(''),
       dietOther: new FormControl(''),
       notes: new FormControl(''),
-      vegetarian: new FormControl(''),
-      glutenFree: new FormControl(''),
-      dairyFree: new FormControl(''),
-      other: new FormControl(''),
-      highchairRequired: new FormControl(''),
-      wheelchairAccessibility: new FormControl('')
-    }); // the form group needs to be initialised, and each form control needs to be passed in with a key and value
-   }
+      vegetarian: new FormControl(false),
+      glutenFree: new FormControl(false),
+      dairyFree: new FormControl(false),
+      other: new FormControl(false),
+      highchairRequired: new FormControl(false),
+      wheelchairAccessibility: new FormControl(false)
+    });
+  }
 
   ngOnInit() {
   }
 
   newBooking() {
-
+    if (this.newbookingform.status === 'VALID') {
+      this.mapBooking(this.newbookingform);
+      this.bookingService.addBooking(this.booking);
+    } else {
+      alert('The form has input errors');
+    }
   }
 
-  saveBookingTest() {
-    console.log('Form Valid? ', this.newbookingform.status);
-    console.log('Form Data: ', this.newbookingform.value);
+  clearForm() {
+    this.newbookingform.reset();
+  }
+
+  private mapBooking(form: FormGroup) {
+    this.booking.bookingName = form.value.firstName + ' ' + form.value.lastName;
+    this.booking.date = form.value.date;
+    this.booking.numberOfPeople = form.value.noOfGuests;
+    this.booking.time = form.value.time;
+    this.booking.table = form.value.tableNumber;
+    this.booking.notes = form.value.notes;
+    this.booking.dietOther = form.value.dietOther;
+    this.booking.dairyFree = form.value.dairyFree;
+    this.booking.glutenFree = form.value.glutenFree;
+    this.booking.vegetarian = form.value.vegetarian;
+    this.booking.highchairRequired = form.value.highchairRequired;
+    this.booking.wheelchair = form.value.wheelchairAccessibility;;
   }
 }

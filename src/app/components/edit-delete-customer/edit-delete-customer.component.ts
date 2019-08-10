@@ -8,18 +8,16 @@ import { AccountsService } from 'src/app/services/accounts/accounts.service';
   styleUrls: ['./edit-delete-customer.component.scss']
 })
 export class EditDeleteCustomerComponent implements OnInit {
-  @Input() customer: Customer;
-  newCustomer: Customer;
+  @Input() customer = new Customer();
 
   constructor(private accountService: AccountsService) { 
-    this.newCustomer =  new Customer();
   }
 
   ngOnInit() {
   }
 
   saveCustomer() {
-    console.log(this.newCustomer);
+    console.log(this.customer);
   }
 
   validateCustomer() {

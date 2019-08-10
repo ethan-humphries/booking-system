@@ -104,8 +104,8 @@
         </mat-expansion-panel>
     </mat-accordion>
     <div class="buttons">
-        <button class="confirmButton" type="submit" (click)="saveBookingTest()" mat-raised-button>CONFIRM
+        <button class="confirmButton" type="submit" (click)="newBooking()" mat-raised-button>CONFIRM
             BOOKING</button>
-        <button class="clearButton" type="reset" mat-raised-button>CLEAR FORM</button>
+        <button class="clearButton" type="reset" (click)="clearForm()" mat-raised-button>CLEAR FORM</button>
     </div>
 </form>

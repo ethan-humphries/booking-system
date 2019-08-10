@@ -32,7 +32,6 @@ import { HelpComponent } from './components/help/help.component';
   ],
   imports: [
     BrowserModule,
-    BrowserModule,
     DashboardModule,
     EditDeleteBookingModule,
     FooterModule,

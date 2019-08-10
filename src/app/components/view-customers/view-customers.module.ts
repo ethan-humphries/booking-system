@@ -10,8 +10,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
-import { EditDeleteBookingModule } from '../edit-delete-booking/edit-delete-booking.module';
 import { ViewCustomersComponent } from './view-customers.component';
+import { AccountsService } from 'src/app/services/accounts/accounts.service';
 
 @NgModule({
   declarations: [
@@ -28,13 +28,13 @@ import { ViewCustomersComponent } from './view-customers.component';
     ReactiveFormsModule,
     HttpClientModule,
     FontAwesomeModule,
-    MatDialogModule,
-    EditDeleteBookingModule
+    MatDialogModule
   ],
   exports: [
     ViewCustomersComponent
   ],
   providers: [
+    AccountsService,
     {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}
   ]
 })
