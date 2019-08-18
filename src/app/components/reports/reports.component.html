@@ -1,3 +1,58 @@
-<div>
-    <h1>Report Generation</h1>
+<div class="title">
+    <h2>Report Generation</h2>
+    <hr />
+</div>
+<div class="container">
+    <div>
+        <h4>Defaults</h4>
+    </div>
+    <form>
+        <div class="row mb-2">
+            <div class="col">
+                <label for="reportType">Please choose a report type</label>
+                <select class="form-control" id="reportType">
+                    <option value="Bookings">Bookings</option>
+                    <option value="Customer">Customer</option>
+                    <option value="Feedback">Feedback</option>
+                    <option value="Staff">Staff</option>
+                    <option value="Complete">Complete</option>
+                </select>
+            </div>
+            <div class="col">
+                <label for="reportType">Please choose a period</label>
+                <select class="form-control" id="reportType">
+                    <option value="WTD">Week to date</option>
+                    <option value="MTD">Month to date</option>
+                    <option value="YTD">Year to date</option>
+                    <option value="ALL">All time</option>
+                </select>
+            </div>
+        </div>
+    </form>
+    <hr />
+    <form>
+        <div>
+            <h4>Custom</h4>
+        </div>
+        <div class="row">
+            <div class="col">
+                <label for="reportType">Please choose a report type:</label>
+                <select class="form-control" id="reportType">
+                    <option value="">Bookings</option>
+                    <option value="">Customer</option>
+                    <option value="">Feedback</option>
+                    <option value="">Staff</option>
+                    <option value="">Complete</option>
+                </select>
+            </div>
+            <div class="col">
+                <label for="startDate">Start date:</label>
+                <input type="date" class="form-control" id="startDate" placeholder="dd/mm/yyyy">
+            </div>
+            <div class="col">
+                <label for="endDate">End date:</label>
+                <input type="date" class="form-control" id="endDate" placeholder="dd/mm/yyyy">
+            </div>
+        </div>
+    </form>
 </div>
