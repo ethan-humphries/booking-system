@@ -71,8 +71,12 @@ export class AccountsService {
 
   }
 
-  editStaff() {
-
+  editStaff(staffId: number) {
+    for(let i = 0; i < this.staff.length; i++) {
+      if(this.staff[i].staffId == staffId) {
+        this.staff.splice(i, 1);
+      }
+    }
   }
 
   deleteStaff() {
