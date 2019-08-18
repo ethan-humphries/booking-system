@@ -13,4 +13,8 @@ export class HomepageComponent implements OnInit {
   ngOnInit() {
   }
 
+  logIn() {
+    
+  }
+
 }

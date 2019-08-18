@@ -1,1 +1,32 @@
-<p>view-staff works!</p>
+<div class="container">
+    <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+        <ng-container matColumnDef="staffId">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Id </th>
+            <td mat-cell *matCellDef="let element"> {{element.staffId}} </td>
+        </ng-container>
+        <ng-container matColumnDef="accountId">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Account </th>
+            <td mat-cell *matCellDef="let element"> {{element.accountId}} </td>
+        </ng-container>
+        <ng-container matColumnDef="firstName">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> First Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.firstName}} </td>
+        </ng-container>
+        <ng-container matColumnDef="lastName">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Last Name</th>
+            <td mat-cell *matCellDef="let element"> {{element.lastName}} </td>
+        </ng-container>
+        <ng-container matColumnDef="position">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Position </th>
+            <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+        </ng-container>
+        <ng-container matColumnDef="edit">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Edit/Delete </th>
+            <td mat-cell *matCellDef="let element">
+                <fa-icon [icon]="faEdit"></fa-icon>&nbsp;&nbsp;<fa-icon (click)="deleteCustomer(element.customerId)" [icon]="faTrash"></fa-icon>
+            </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</div>

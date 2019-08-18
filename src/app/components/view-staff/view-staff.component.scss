@@ -1,0 +1,42 @@
+table {
+    width: 100%;
+    text-align: left;
+  }
+  
+  .container {
+    width: 100%;
+    padding-top: 2%;
+  }
+  
+  mat-form-field {
+    margin-right: 12px;
+  }
+  
+  .filter-options {
+    justify-content: center;
+  }
+  
+  tr:hover {
+    background-color: rgb(0, 136, 206);
+    td,
+    th {
+      color: white;
+    }
+  }
+  
+  .mat-row:last-of-type {
+    padding-right: 0px;
+  }
+  
+  .mat-cell:last-of-type {
+    padding-right: 0px;
+  }
+  
+  .mat-footer:last-of-type {
+    padding-right: 0px;
+  }
+  
+  .mat-header:last-of-type {
+    padding-right: 0px;
+  }
+  
