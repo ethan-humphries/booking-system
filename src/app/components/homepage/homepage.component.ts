@@ -7,14 +7,20 @@ import { Booking } from 'src/app/models/bookings/booking';
   styleUrls: ['./homepage.component.scss']
 })
 export class HomepageComponent implements OnInit {
-
+  logInClicked =  false;
+  signUpClicked =  false;
   constructor() { }
 
   ngOnInit() {
   }
 
-  logIn() {
-    
+  logInClick() {
+    this.logInClicked =  !this.logInClicked;
+    this.signUpClicked =  false;
   }
 
+  signUpClick() {
+    this.signUpClicked =  !this.signUpClicked;
+    this.logInClicked =  false;
+  }
 }

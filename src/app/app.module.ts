@@ -23,6 +23,8 @@ import { EditDeleteStaffModule } from './components/edit-delete-staff/edit-delet
 import { ViewStaffModule } from './components/view-staff/view-staff.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HelpComponent } from './components/help/help.component';
+import { LoggedInOverviewComponent } from './components/logged-in-overview/logged-in-overview.component';
+import { LoggedInOverviewModule } from './components/logged-in-overview/logged-in-overview.module';
 
 
 @NgModule({
@@ -51,7 +53,8 @@ import { HelpComponent } from './components/help/help.component';
     NewStaffModule,
     EditDeleteStaffModule,
     ViewStaffModule,
-    NgbModule
+    NgbModule,
+    LoggedInOverviewModule
   ],
   exports: [
     RouterModule,
