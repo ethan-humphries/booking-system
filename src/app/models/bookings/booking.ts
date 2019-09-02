@@ -23,8 +23,8 @@ export class Booking {
 }
 
 export enum BookingStatus {
-    active = 0,
-    complete = 1,
-    cancelled = 2,
-    noShow = 3
+    active = 1,
+    complete = 2,
+    cancelled = 3,
+    noShow = 4
 }
