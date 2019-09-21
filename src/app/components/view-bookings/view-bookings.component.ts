@@ -7,7 +7,6 @@ import { BookingService } from 'src/app/services/bookings/booking-service.servic
 import { faEdit } from '@fortawesome/free-solid-svg-icons';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
-
 @Component({
   selector: 'app-view-bookings',
   templateUrl: './view-bookings.component.html',
@@ -29,16 +28,17 @@ export class ViewBookingsComponent implements OnInit {
   constructor(private bookingService: BookingService) { }
 
   ngOnInit() {
-    this.bookings = this.getBookings();
+    this.bookingService.getAllBookingsByUserId(2).subscribe( bookings => {
+      bookings.forEach(element => {
+        console.log(element);
+        this.bookings.push(element);
+      })
+    });
+
     if (this.bookings) {
       this.dataSource = new MatTableDataSource(this.bookings);
+      this.dataSource.sort = this.sort;
     }
-    this.dataSource.sort = this.sort;
-
-  }
-
-  getBookings() {
-    return this.bookingService.getAllBookingsByUserId(1);
   }
 
   deleteBooking(bookingId: any) {

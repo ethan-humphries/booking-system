@@ -14,7 +14,6 @@ export class NewBookingComponent implements OnInit {
   booking: Booking;
 
   constructor(private bookingService: BookingService) {
-    this.booking = new Booking();
     this.newbookingform = new FormGroup({
       date: new FormControl(new Date(), Validators.required),
       noOfGuests: new FormControl('', Validators.required),
@@ -58,7 +57,7 @@ export class NewBookingComponent implements OnInit {
     this.booking.time = form.value.time;
     this.booking.table = form.value.tableNumber;
     this.booking.notes = form.value.notes;
-    this.booking.dietOther = form.value.dietOther;
+    this.booking.dietryRequirements = form.value.dietOther;
     this.booking.dairyFree = form.value.dairyFree;
     this.booking.glutenFree = form.value.glutenFree;
     this.booking.vegetarian = form.value.vegetarian;
