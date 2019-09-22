@@ -1,4 +1,4 @@
-<form [formGroup]="newbookingform">
+<form [formGroup]="newbookingform" class="mb-10">
     <mat-accordion class="newBooking">
         <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
             <mat-expansion-panel-header>
@@ -109,3 +109,8 @@
         <button class="clearButton" type="reset" (click)="clearForm()" mat-raised-button>CLEAR FORM</button>
     </div>
 </form>
+<br />
+<br />
+<div *ngIf="bookingSuccess" class="alert alert-success pt-35" role="alert">
+    <span >The booking was sucessfully created</span>
+</div>

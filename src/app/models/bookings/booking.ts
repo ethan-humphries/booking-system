@@ -1,11 +1,10 @@
-import { Time } from '@angular/common';
 import { Feedback } from './feedback';
 import { Customer } from '../accounts/customer';
 
 export interface Booking {
     id?: number;
     staffId: number;
-    bookingName: string;
+    bookingName?: string;
     customerId?: string;
     date?: any;
     time?: any;
@@ -22,8 +21,8 @@ export interface Booking {
     glutenFree?: boolean;
     dairyFree?: boolean;
     other?: boolean;
-    feedback: Feedback[];
-    customer: Customer;
+    feedback?: Feedback[];
+    customer?: Customer;
 }
 
 export enum BookingStatus {
