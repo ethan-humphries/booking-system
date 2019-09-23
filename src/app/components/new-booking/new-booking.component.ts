@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators, FormArray } from '@angular/forms';
 import { BookingService } from 'src/app/services/bookings/booking-service.service';
-import { Booking } from 'src/app/models/bookings/booking';
+import { Booking, BookingStatus } from 'src/app/models/bookings/booking';
 
 @Component({
   selector: 'app-new-booking',
@@ -12,9 +12,9 @@ export class NewBookingComponent implements OnInit {
   newbookingform: FormGroup;
   panelOpenState;
   booking: Booking;
+  bookingSuccess = false;
 
   constructor(private bookingService: BookingService) {
-    this.booking = new Booking();
     this.newbookingform = new FormGroup({
       date: new FormControl(new Date(), Validators.required),
       noOfGuests: new FormControl('', Validators.required),
@@ -40,29 +40,42 @@ export class NewBookingComponent implements OnInit {
 
   newBooking() {
     if (this.newbookingform.status === 'VALID') {
-      this.mapBooking(this.newbookingform);
-      this.bookingService.addBooking(this.booking);
+      this.bookingSuccess = false;
+      this.bookingService.addBooking(this.mapBooking(this.newbookingform)).subscribe(response => {
+        if(response !== null) {
+          this.bookingSuccess =  true;
+          alert('Booking Created with Id: ' + response.id);
+        }
+      });
     } else {
       alert('The form has input errors');
+      this.bookingSuccess = false;
     }
   }
 
   clearForm() {
     this.newbookingform.reset();
+    this.bookingSuccess = false;
   }
 
   private mapBooking(form: FormGroup) {
-    this.booking.bookingName = form.value.firstName + ' ' + form.value.lastName;
-    this.booking.date = form.value.date;
-    this.booking.numberOfPeople = form.value.noOfGuests;
-    this.booking.time = form.value.time;
-    this.booking.table = form.value.tableNumber;
-    this.booking.notes = form.value.notes;
-    this.booking.dietOther = form.value.dietOther;
-    this.booking.dairyFree = form.value.dairyFree;
-    this.booking.glutenFree = form.value.glutenFree;
-    this.booking.vegetarian = form.value.vegetarian;
-    this.booking.highchairRequired = form.value.highchairRequired;
-    this.booking.wheelchair = form.value.wheelchairAccessibility;;
+    this.booking = {
+      staffId: 1,
+      bookingName: `${form.value.firstName} ${form.value.lastName}`,
+      date: form.value.date,
+      numberOfPeople: form.value.noOfGuests,
+      time: form.value.time,
+      table: form.value.tableNumber,
+      duration: '',
+      notes: form.value.notes,
+      dietryRequirements: form.value.dietOther,
+      dairyFree: form.value.dairyFree,
+      glutenFree: form.value.glutenFree,
+      vegetarian: form.value.vegetarian,
+      highchairRequired: form.value.highchairRequired,
+      wheelchair: form.value.wheelchairAccessibility,
+      status: BookingStatus.active
+    }
+    return this.booking;
   }
 }
