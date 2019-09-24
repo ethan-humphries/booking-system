@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
 import { ViewStaffComponent } from './view-staff.component';
+import { AccountsService } from 'src/app/services/accounts/accounts.service';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { ViewStaffComponent } from './view-staff.component';
     ViewStaffComponent
   ],
   providers: [
-    {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}
+    {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}},
+    AccountsService
   ]
 })
 export class ViewStaffModule { }

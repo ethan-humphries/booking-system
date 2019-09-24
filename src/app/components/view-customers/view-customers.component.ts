@@ -11,7 +11,7 @@ import { MatTableDataSource } from '@angular/material/table';
   styleUrls: ['./view-customers.component.scss']
 })
 export class ViewCustomersComponent implements OnInit {
-  customers: Customer[];
+  customers: Customer[] = [];
   displayedColumns: string[] = ['customerId', 'customerName', 'phone', 'email', 'history', 'dietryRequirements', 'edit'];
   dataSource;
   faEdit = faEdit;
@@ -23,15 +23,14 @@ export class ViewCustomersComponent implements OnInit {
   constructor(private accountsService: AccountsService) { }
 
   ngOnInit() {
-    this.customers = this.getAllCustomers();
+    this.accountsService.getAllCustomersForAccount(2).subscribe(customers => 
+      customers.forEach(customer => {
+        this.customers.push(customer);
+      }));
     if (this.customers) {
       this.dataSource = new MatTableDataSource(this.customers);
     }
     this.dataSource.sort = this.sort;
-  }
-
-  getAllCustomers() {
-    return this.accountsService.getAllCustomersForAccount(1);
   }
 
   deleteCustomer(customerId: number) {

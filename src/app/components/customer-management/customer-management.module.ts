@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { NewCustomerComponent } from '../new-customer/new-customer.component';
 import { EditDeleteCustomerComponent } from '../edit-delete-customer/edit-delete-customer.component';
 import { ViewCustomersComponent } from '../view-customers/view-customers.component';
+import { AccountsService } from 'src/app/services/accounts/accounts.service';
 
 const customerRoutes: Routes = [
     { path: 'new-customer', component: NewCustomerComponent, outlet: "customer-managment" },
@@ -26,6 +27,8 @@ const customerRoutes: Routes = [
     exports: [
         CustomerManagementComponent
     ],
-    providers: []
+    providers: [
+        AccountsService
+    ]
 })
 export class CustomerManagementModule { }

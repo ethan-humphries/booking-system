@@ -11,7 +11,7 @@ import { AccountsService } from 'src/app/services/accounts/accounts.service';
   styleUrls: ['./view-staff.component.scss']
 })
 export class ViewStaffComponent implements OnInit {
-  staff: Staff[];
+  staff: Staff[] = [];
   displayedColumns: string[] = ['staffId', 'accountId', 'firstName', 'lastName', 'position', 'edit'];
   dataSource;
   faEdit = faEdit;
@@ -23,15 +23,15 @@ export class ViewStaffComponent implements OnInit {
   constructor(private accountService: AccountsService) { }
 
   ngOnInit() {
-    this.staff = this.getAllStaff();
+    this.accountService.getAllStaff(2).subscribe(staff => 
+      staff.forEach(st => {
+        this.staff.push(st);
+      })
+    );
     if (this.staff) {
       this.dataSource = new MatTableDataSource(this.staff);
     }
     this.dataSource.sort = this.sort;
-  }
-
-  private getAllStaff() {
-    return this.accountService.getAllStaff(1);
   }
 }
 

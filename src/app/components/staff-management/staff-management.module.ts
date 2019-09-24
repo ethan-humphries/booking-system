@@ -5,6 +5,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { NewStaffComponent } from '../new-staff/new-staff.component';
 import { EditDeleteStaffComponent } from '../edit-delete-staff/edit-delete-staff.component';
 import { ViewStaffComponent } from '../view-staff/view-staff.component';
+import { AccountsService } from 'src/app/services/accounts/accounts.service';
 
 const staffRoutes: Routes = [
     { path: 'new-staff', component: NewStaffComponent, outlet: "staff-managment" },
@@ -26,6 +27,8 @@ const staffRoutes: Routes = [
     exports: [
         StaffManagementComponent
     ],
-    providers: []
+    providers: [
+        AccountsService
+    ]
 })
 export class StaffManagementModule { }

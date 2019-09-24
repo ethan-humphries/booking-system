@@ -8,7 +8,7 @@ import { AccountsService } from 'src/app/services/accounts/accounts.service';
   styleUrls: ['./edit-delete-customer.component.scss']
 })
 export class EditDeleteCustomerComponent implements OnInit {
-  @Input() customer = new Customer();
+  @Input() customer: Customer;
 
   constructor(private accountService: AccountsService) { 
   }

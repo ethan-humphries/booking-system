@@ -42,8 +42,8 @@ export class NewBookingComponent implements OnInit {
     if (this.newbookingform.status === 'VALID') {
       this.bookingSuccess = false;
       this.bookingService.addBooking(this.mapBooking(this.newbookingform)).subscribe(response => {
-        if(response !== null) {
-          this.bookingSuccess =  true;
+        if (response !== null) {
+          this.bookingSuccess = true;
           alert('Booking Created with Id: ' + response.id);
         }
       });

@@ -1,7 +1,7 @@
 export class Staff {
-    staffId: number;
-    accountId: number;
-    firstName: string;
-    lastName: string;
-    position: string;
+    staffId?: number;
+    accountId?: number;
+    firstName?: string;
+    lastName?: string;
+    position?: string;
 }

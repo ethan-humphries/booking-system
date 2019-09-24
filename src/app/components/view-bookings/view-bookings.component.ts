@@ -17,7 +17,7 @@ export class ViewBookingsComponent implements OnInit {
   dataSource;
   fromDate = new FormControl(new Date());
   toDate = new FormControl(new Date());
-  bookings: Booking[];
+  bookings: Booking[] = [];
   faEdit = faEdit;
   faTrash = faTrash;
   bookingName =  new FormControl('');
@@ -30,11 +30,10 @@ export class ViewBookingsComponent implements OnInit {
   ngOnInit() {
     this.bookingService.getAllBookingsByUserId(2).subscribe( bookings => {
       bookings.forEach(element => {
-        console.log(element);
         this.bookings.push(element);
-      })
+      });
+      return this.bookings;
     });
-
     if (this.bookings) {
       this.dataSource = new MatTableDataSource(this.bookings);
       this.dataSource.sort = this.sort;
@@ -55,16 +54,16 @@ export class ViewBookingsComponent implements OnInit {
 
   getBookingStatus(status: BookingStatus) {
     switch(status) {
-      case BookingStatus.active: {
+      case 0: {
         return 'Active';
       }
-      case BookingStatus.cancelled: {
+      case 1: {
         return 'Cancelled';
       }
-      case BookingStatus.complete: {
+      case 2: {
         return 'Complete';
       }
-      case BookingStatus.noShow: {
+      case 3: {
         return 'No Show';
       }
       default: {
@@ -74,9 +73,6 @@ export class ViewBookingsComponent implements OnInit {
   }
 
   searchClick() {
-    console.log('Name:' , this.bookingName.value);
-    console.log('Customer:' , this.customerName.value);
-    console.log('From Date:' , this.fromDate.value);
-    console.log('To Date:' , this.toDate.value);
+    alert('This function is not complete');
   }
 }

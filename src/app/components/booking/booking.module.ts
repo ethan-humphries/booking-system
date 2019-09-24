@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BookingComponent } from './booking.component';
+import { BookingService } from 'src/app/services/bookings/booking-service.service';
 
 @NgModule({
   declarations: [
@@ -12,6 +13,8 @@ import { BookingComponent } from './booking.component';
   exports: [
     BookingComponent
   ],
-  providers: []
+  providers: [
+    BookingService
+  ]
 })
 export class BookingModule { }

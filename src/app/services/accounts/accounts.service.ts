@@ -1,85 +1,64 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Customer } from 'src/app/models/accounts/customer';
+import { Observable } from 'rxjs';
 import { Staff } from 'src/app/models/accounts/staff';
+
+const requestUrl = 'https://localhost:44337/api/Customer/';
+const headers = new HttpHeaders({
+  'Accept': 'application/json',
+  'Access-Control-Allow-Origin': 'localhost:4200'
+});
 
 @Injectable({
   providedIn: 'root'
 })
 export class AccountsService {
-  customers: Customer[] = [
-    {customerId: 1, customerName: 'Ethan Humphries', phone: '02 49434426', email: 'ethan@meow.com', dietryRequirements: 'NIL',history: 'DO NOT BOOK'},
-    {customerId: 2, customerName: 'Steven Wah', phone: '0421578027', email: 'ethan@meow.com', dietryRequirements: '', history: 'BAD DEBT'},
-    {customerId: 3, customerName: 'Josh Josh', phone: '+61244264820', email: 'ethan@meow.com', dietryRequirements: 'Vegan', history: 'Good'},
-    {customerId: 4, customerName: 'Nathan Hickery Hicks', phone: '+61427082347', email: 'ethan@meow.com', dietryRequirements: 'Vego', history: 'Good'},
-    {customerId: 5, customerName: 'Ollie Dog', phone: '0421578027', email: 'ethan@meow.com', dietryRequirements: 'Keto', history: 'Big Tipper'},
-    {customerId: 6, customerName: 'Loko Bear', phone: 'NIL', email: 'ethan@meow.com', dietryRequirements: 'Snails only', history: 'Cuddly'},
-    {customerId: 7, customerName: 'Katy Perry', phone: '', email: 'ethan@meow.com', dietryRequirements: 'Nil', history: 'Good'},
-  ];
-
-  staff: Staff[] = [
-    {staffId: 101, accountId: 1, firstName: 'John', lastName: 'Smith', position: 'Chef'},
-    {staffId: 102, accountId: 1, firstName: 'Ethan', lastName: 'One-Dad', position: 'Nerd'},
-    {staffId: 103, accountId: 1, firstName: 'Dallas', lastName: 'Two-Dads', position: 'Chief of Nuts & Bolts'},
-    {staffId: 104, accountId: 1, firstName: 'Jake', lastName: 'Hussle', position: 'Hustler'},
-    {staffId: 105, accountId: 1, firstName: 'Sarah', lastName: 'Johnston', position: 'Waitress'},
-    {staffId: 106, accountId: 1, firstName: 'The', lastName: 'Weekend', position: 'Soul Soothing Music'},
-    {staffId: 107, accountId: 1, firstName: 'Stephanie', lastName: 'Prowling', position: 'Customer Relations'},
-    {staffId: 108, accountId: 1, firstName: 'Ollie', lastName: 'Menace', position: 'Menace'}
-  ];
 
   constructor(private httpClient: HttpClient) { }
 
-  getAllCustomersForAccount(accountId: number) {
-    return this.customers;
+  getAllCustomersForAccount(accountId: number): Observable<Customer[]> {
+    return this.httpClient.get<Customer[]>(`${requestUrl}${accountId}`);
   }
 
-  newCustomer(customer: Customer) {
-    this.customers.push(customer);
+  newCustomer(customer: Customer): Observable<Customer> {
+    console.log(customer);
+    return this.httpClient.post<Customer>(requestUrl, customer, { headers });
   }
 
-  editCustomer() {
-
+  editCustomer(customer: Customer): Observable<Customer> {
+    return this.httpClient.put<Customer>(requestUrl, customer, { headers });
   }
 
-  deleteCustomer(customerId: number) {
-    for(let i = 0; i < this.customers.length; i++) {
-      if(this.customers[i].customerId == customerId) {
-        this.customers.splice(i, 1);
-      }
-    }
+  deleteCustomer(customer: Customer): Observable<Customer> {
+    return this.httpClient.delete<Customer>(`${requestUrl}${customer.customerId}`, { headers });
   }
 
-  newAccount() {
+  newAccount(account: Account) {
 
   }
 
-  editAccountDetails() {
+  editAccountDetails(account: Account) {
 
   }
 
-  editAccountSettings() {
+  editAccountSettings(account: Account) {
 
   }
 
-  getAllStaff(accountId: number) {
-    return this.staff;
+  getAllStaff(accountId: number): Observable<Staff[]> {
+    return this.httpClient.get<Staff[]>(`https://localhost:44337/api/Staff/${accountId}`);
   }
 
-  newStaff() {
-
+  newStaff(staff: Staff): Observable<Staff> {
+    return this.httpClient.post<Staff>('https://localhost:44337/api/Staff/', staff, { headers });
   }
 
-  editStaff(staffId: number) {
-    for(let i = 0; i < this.staff.length; i++) {
-      if(this.staff[i].staffId == staffId) {
-        this.staff.splice(i, 1);
-      }
-    }
+  editStaff(staff: Staff): Observable<Staff> {
+    return this.httpClient.put<Staff>('https://localhost:44337/api/Staff/', staff, { headers });
   }
 
-  deleteStaff() {
-
+  deleteStaff(staffId: number): Observable<Staff> {
+    return this.httpClient.delete<Staff>(`https://localhost:44337/api/Staff/delete/${staffId}`, { headers });
   }
 }

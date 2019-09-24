@@ -4,31 +4,32 @@
             <div class="row pt-2">
                 <div class="col">
                     <label for="firstName">First Name</label>
-                    <input type="text" class="form-control" id="firstName" required>
+                    <input type="text" [(ngModel)]="staff.firstName" name="firstName" class="form-control" id="firstName" #ctrl="ngModel" required>
                 </div>
 
                 <div class="col">
                     <label for="lastName">Last Name</label>
-                    <input type="text" class="form-control" id="lastName" required>
+                    <input type="text" [(ngModel)]="staff.lastName" name="lastName" class="form-control" id="lastName" #ctrl="ngModel" required>
                 </div>
             </div>
             <div class="row pt-2">
                 <div class="col">
-                    <label for="email">Email</label>
-                    <input type="email" class="form-control" id="email" required>
-                </div>
-                <div class="col">
-                    <label for="phone">Phone</label>
-                    <input type="text" class="form-control" id="phone" required>
+                    <label for="position">Position</label>
+                    <input type="position" [(ngModel)]="staff.position" name="position" class="form-control" id="position" #ctrl="ngModel" required>
                 </div>
             </div>
             <br>
             <div class="row pt-3">
                 <div class="col">
-                    <button type="button" class="btn btn-outline-success">Save Staff</button>&nbsp;
+                    <button type="button" class="btn btn-outline-success" (click)="saveStaff()">Save Staff</button>&nbsp;
                     <button type="button" class="btn btn-outline-danger">Cancel</button>
                 </div>
             </div>
         </div>
     </form>
+</div>
+<br />
+<br />
+<div *ngIf="saveSuccess" class="alert alert-success pt-35" role="alert">
+    <span >The staff member was sucessfully created</span>
 </div>

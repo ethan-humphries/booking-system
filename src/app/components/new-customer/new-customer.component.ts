@@ -9,15 +9,22 @@ import { AccountsService } from 'src/app/services/accounts/accounts.service';
 })
 export class NewCustomerComponent implements OnInit {
   customer: Customer;
+  saveSuccess =  false;
   constructor(private accountsService: AccountsService) { 
-    this.customer =  new Customer();
+    this.customer = {};
   }
 
   ngOnInit() {
   }
 
   saveCustomer() {
-    console.log(this.customer);
+    if(this.customer != null) {
+      return this.accountsService.newCustomer(this.customer).subscribe(response => {
+        if(response !== null) {
+          this.saveSuccess = true;
+        }
+      });
+    }
   }
 
   validateCustomer() {
@@ -25,6 +32,10 @@ export class NewCustomerComponent implements OnInit {
   }
 
   cancel() {
+
+  }
+
+  private mapCustomer() {
 
   }
 
