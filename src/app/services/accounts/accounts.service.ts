@@ -4,7 +4,7 @@ import { Customer } from 'src/app/models/accounts/customer';
 import { Observable } from 'rxjs';
 import { Staff } from 'src/app/models/accounts/staff';
 
-const requestUrl = 'https://localhost:44337/api/Customer/';
+const requestUrl = 'http://hbs-api.azurewebsites.net/api/Customer/';
 const headers = new HttpHeaders({
   'Accept': 'application/json',
   'Access-Control-Allow-Origin': 'localhost:4200'
@@ -47,19 +47,19 @@ export class AccountsService {
   }
 
   getAllStaff(accountId: number): Observable<Staff[]> {
-    return this.httpClient.get<Staff[]>(`https://localhost:44337/api/Staff/${accountId}`);
+    return this.httpClient.get<Staff[]>(`http://hbs-api.azurewebsites.net/api/Staff/${accountId}`);
   }
 
   newStaff(staff: Staff): Observable<Staff> {
-    return this.httpClient.post<Staff>('https://localhost:44337/api/Staff/', staff, { headers });
+    return this.httpClient.post<Staff>('http://hbs-api.azurewebsites.net/api/Staff/', staff, { headers });
   }
 
   editStaff(staff: Staff): Observable<Staff> {
     staff.accountId = 2;
-    return this.httpClient.put<Staff>('https://localhost:44337/api/Staff/', staff, { headers });
+    return this.httpClient.put<Staff>('http://hbs-api.azurewebsites.net/api/Staff/', staff, { headers });
   }
 
   deleteStaff(staffId: number): Observable<Staff> {
-    return this.httpClient.delete<Staff>(`https://localhost:44337/api/Staff/delete/${staffId}`, { headers });
+    return this.httpClient.delete<Staff>(`http://hbs-api.azurewebsites.net/api/Staff/delete/${staffId}`, { headers });
   }
 }
