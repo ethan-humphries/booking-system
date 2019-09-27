@@ -4,14 +4,14 @@
             <div class="row pt-2">
                 <div class="col">
                     <label for="customerId">Customer Id</label>
-                    <input type="text" [(ngModel)]="customer.customerId" name="customerId" #ctrl="ngModel"
+                    <input type="text" [(ngModel)]="customer.id" name="customerId" #ctrl="ngModel"
                         class="form-control" id="customerId" required>
                 </div>
             </div>
             <div class="row pt-2">
                 <div class="col">
                     <label for="customerName">Customer Name</label>
-                    <input type="text" [(ngModel)]="customer.customerName" name="customerName" #ctrl="ngModel"
+                    <input type="text" [(ngModel)]="customer.name" name="customerName" #ctrl="ngModel"
                         class="form-control" id="customerName" required>
                 </div>
 
@@ -55,9 +55,14 @@
                     <button type="button" class="btn btn-outline-success" (click)="saveCustomer()">Save Customer
                         Chancges</button>&nbsp;
                     <button type="button" class="btn btn-outline-warning">Cancel</button>&nbsp;
-                    <button type="button" class="btn btn-outline-danger">Delete Customer</button>
+                    <button type="button" class="btn btn-outline-danger" (click)="deleteCustomer()">Delete Customer</button>
                 </div>
             </div>
         </div>
     </form>
+</div>
+<br />
+<br />
+<div *ngIf="saveSuccess" class="alert alert-success pt-35" role="alert">
+    <span >The customer was sucessfully saved</span>
 </div>

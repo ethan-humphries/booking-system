@@ -1,5 +1,5 @@
 export class Staff {
-    staffId?: number;
+    id?: number;
     accountId?: number;
     firstName?: string;
     lastName?: string;

@@ -26,17 +26,9 @@ export class NewCustomerComponent implements OnInit {
       });
     }
   }
-
-  validateCustomer() {
-
-  }
-
+  
   cancel() {
-
+    this.customer = {};
+    this.saveSuccess = false;
   }
-
-  private mapCustomer() {
-
-  }
-
 }

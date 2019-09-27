@@ -4,38 +4,39 @@
             <div class="row pt-2">
                 <div class="col">
                     <label for="staffId">Staff Id Number</label>
-                    <input type="text" class="form-control" id="staffId" readonly>
+                    <input type="text" [(ngModel)]="staff.id" #ctrl="ngModel" name="id" class="form-control" id="staffId">
                 </div>
             </div>
             <div class="row pt-2">
                 <div class="col">
                     <label for="firstName">First Name</label>
-                    <input type="text" class="form-control" id="firstName" required>
+                    <input type="text" [(ngModel)]="staff.firstName" #ctrl="ngModel" name="firstName"  class="form-control" id="firstName" required>
                 </div>
 
                 <div class="col">
                     <label for="lastName">Last Name</label>
-                    <input type="text" class="form-control" id="lastName" required>
+                    <input type="text" [(ngModel)]="staff.lastName" #ctrl="ngModel" name="lastName"  class="form-control" id="lastName" required>
                 </div>
             </div>
             <div class="row pt-2">
                 <div class="col">
-                    <label for="email">Email</label>
-                    <input type="email" class="form-control" id="email" required>
-                </div>
-                <div class="col">
-                    <label for="phone">Phone</label>
-                    <input type="text" class="form-control" id="phone" required>
+                    <label for="position">Position</label>
+                    <input type="text" [(ngModel)]="staff.position" #ctrl="ngModel" name="position"  class="form-control" id="position" required>
                 </div>
             </div>
             <br>
             <div class="row pt-3">
                 <div class="col">
-                    <button type="button" class="btn btn-outline-success">Save Changes</button>&nbsp;
+                    <button type="button" class="btn btn-outline-success" (click)="saveStaff()">Save Changes</button>&nbsp;
                     <button type="button" class="btn btn-outline-warning">Cancel</button>&nbsp;
-                    <button type="button" class="btn btn-outline-danger">Delete Staff member</button>
+                    <button type="button" class="btn btn-outline-danger" (click)="deleteStaff()">Delete Staff member</button>
                 </div>
             </div>
         </div>
     </form>
+</div>
+<br />
+<br />
+<div *ngIf="saveSuccess" class="alert alert-success pt-35" role="alert">
+    <span >The staff member was sucessfully saved</span>
 </div>

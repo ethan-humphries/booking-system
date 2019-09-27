@@ -8,7 +8,8 @@ import { AccountsService } from 'src/app/services/accounts/accounts.service';
   styleUrls: ['./edit-delete-customer.component.scss']
 })
 export class EditDeleteCustomerComponent implements OnInit {
-  @Input() customer: Customer;
+  @Input() customer: Customer = {};
+  saveSuccess = false;
 
   constructor(private accountService: AccountsService) { 
   }
@@ -17,15 +18,18 @@ export class EditDeleteCustomerComponent implements OnInit {
   }
 
   saveCustomer() {
-    console.log(this.customer);
-  }
-
-  validateCustomer() {
-
+    console.log(this.customer)
+    if(this.customer.id) {
+      this.accountService.editCustomer(this.customer).subscribe(response => {
+        if(response !== null) {
+          this.saveSuccess =  true;
+        }
+      })
+    }
   }
 
   deleteCustomer() {
-
+    alert('this function is not ready in beta 1');
+    this.saveSuccess = false;
   }
-
 }

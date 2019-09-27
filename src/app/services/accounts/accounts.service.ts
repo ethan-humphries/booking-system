@@ -31,7 +31,7 @@ export class AccountsService {
   }
 
   deleteCustomer(customer: Customer): Observable<Customer> {
-    return this.httpClient.delete<Customer>(`${requestUrl}${customer.customerId}`, { headers });
+    return this.httpClient.delete<Customer>(`${requestUrl}${customer.id}`, { headers });
   }
 
   newAccount(account: Account) {
@@ -55,6 +55,7 @@ export class AccountsService {
   }
 
   editStaff(staff: Staff): Observable<Staff> {
+    staff.accountId = 2;
     return this.httpClient.put<Staff>('https://localhost:44337/api/Staff/', staff, { headers });
   }
 
