@@ -33,5 +33,9 @@ export class ViewStaffComponent implements OnInit {
     }
     this.dataSource.sort = this.sort;
   }
+
+  deleteStaff() {
+    alert('This feature is not yet avalaible');
+  }
 }
 
